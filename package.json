@@ -1,0 +1,37 @@
+{
+	"name": "antreee-server",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "jest --detectOpenHandles --forceExit --runInBand",
+		"dev": "nodemon ./bin/www",
+		"start": "node ./bin/www"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Antreee/Antreee-Server.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Antreee/Antreee-Server/issues"
+	},
+	"homepage": "https://github.com/Antreee/Antreee-Server#readme",
+	"dependencies": {
+		"bcrypt": "^5.0.1",
+		"cors": "^2.8.5",
+		"dotenv": "^16.0.0",
+		"express": "^4.17.3",
+		"jsonwebtoken": "^8.5.1",
+		"mongodb": "^4.5.0",
+		"mongoose": "^6.2.10",
+		"validator": "^13.7.0"
+	},
+	"devDependencies": {
+		"jest": "^27.5.1",
+		"nodemon": "^2.0.15",
+		"supertest": "^6.2.2"
+	}
+}
