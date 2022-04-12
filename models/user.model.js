@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const connection = require("../config/mongodb");
 const { isEmail } = require("validator");
 
-const userSchema = new mongoose.Schema({
+const users = new mongoose.Schema({
 	fullName: {
 		type: String,
 		required: true,
@@ -11,9 +11,7 @@ const userSchema = new mongoose.Schema({
 		type: String,
 		required: true,
 		unique: true,
-		validate: {
-			validate: [isEmail, "Invalid email"],
-		},
+		validate: [isEmail, "Invalid email"],
 	},
 	password: {
 		type: String,
@@ -33,6 +31,6 @@ const userSchema = new mongoose.Schema({
 	},
 });
 
-const User = connection.model("User", userSchema);
+const User = connection.model("User", users);
 
 module.exports = User;
