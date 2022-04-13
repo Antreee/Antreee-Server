@@ -1,7 +1,13 @@
 const mongoose = require("mongoose");
 const connection = require("../config/mongodb");
 const Restaurant = require("./restaurant.model");
-const Category = require("./category.model");
+
+const foodCatergorySchema = new mongoose.Schema({
+	name: {
+		type: String,
+		required: true,
+	},
+});
 
 const food = new mongoose.Schema({
 	name: {
@@ -26,14 +32,10 @@ const food = new mongoose.Schema({
 		required: true,
 		index: true,
 	},
-	category_Id: {
-		type: mongoose.Schema.Types.ObjectId,
-		ref: Category,
-		required: true,
-		index: true,
-	},
+	categoryFood: foodCatergorySchema,
 });
 
 const Food = connection.model("Food", food);
+const FoodCategory = connection.model("FoodCategory", foodCatergorySchema);
 
-module.exports = Food;
+module.exports = { Food, FoodCategory };

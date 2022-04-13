@@ -3,7 +3,7 @@ const connection = require("../config/mongodb");
 const { isEmail } = require("validator");
 const { hashPassword } = require("../helpers/bcrypt");
 
-const users = new mongoose.Schema({
+const userScema = new mongoose.Schema({
 	fullName: {
 		type: String,
 		required: true,
@@ -32,7 +32,7 @@ const users = new mongoose.Schema({
 	},
 });
 
-users.pre("save", async function (next) {
+userScema.pre("save", async function (next) {
 	try {
 		this.password = await hashPassword(this.password);
 		next();
@@ -42,6 +42,6 @@ users.pre("save", async function (next) {
 	}
 });
 
-const User = connection.model("User", users);
+const User = connection.model("user", userScema);
 
 module.exports = User;
