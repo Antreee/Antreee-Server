@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 const connection = require("../config/mongodb");
 const { isEmail } = require("validator");
 const { hashPassword } = require("../helpers/bcrypt");
-const bcrypt = require("bcrypt");
 
 const users = new mongoose.Schema({
 	fullName: {
