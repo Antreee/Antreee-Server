@@ -1,13 +1,13 @@
 const mongoose = require("mongoose");
 const connection = require("../config/mongodb");
 
-const categories = new mongoose.Schema({
+const foodCategories = new mongoose.Schema({
 	name: {
 		type: String,
 		required: true,
 	},
 });
 
-const Category = connection.model("Category", categories);
+const FoodCategory = connection.model("FoodCategory", foodCategories);
 
-module.exports = Category;
+module.exports = FoodCategory;

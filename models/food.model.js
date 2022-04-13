@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const connection = require("../config/mongodb");
 const Restaurant = require("./restaurant.model");
-const Category = require("./category.model");
+const FoodCategory = require("./category.model");
 
 const food = new mongoose.Schema({
 	name: {
@@ -28,7 +28,7 @@ const food = new mongoose.Schema({
 	},
 	category_Id: {
 		type: mongoose.Schema.Types.ObjectId,
-		ref: Category,
+		ref: FoodCategory,
 		required: true,
 		index: true,
 	},
