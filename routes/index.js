@@ -5,8 +5,8 @@ const routerCustomer = require("./customerRouter");
 const routerRestaurant = require("./restaurantRouter");
 
 router.use("/admin", routerAdmin);
-router.use("/customer", routerCustomer);
-router.use("/restaurant", routerRestaurant);
-router.use("/category", routerCategory);
+router.use("/customers", routerCustomer);
+router.use("/restaurants", routerRestaurant);
+router.use("/categories", routerCategory);
 
 module.exports = router;
