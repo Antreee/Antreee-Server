@@ -26,6 +26,37 @@ class AuthController {
 			next(error);
 		}
 	}
+
+	static async login(req, res, next) {
+		try {
+			const { email, password } = req.body;
+			const user = await User.findOne({ email });
+			if (!user) {
+				throw {
+					code: 400,
+					message: "Invalid email or password",
+				};
+			}
+			const isMatch = await comparePassword(password, user.password);
+			if (!isMatch) {
+				throw {
+					code: 400,
+					message: "Invalid email or password",
+				};
+			}
+			const access_token = generateToken({
+				id: user._id,
+				email: user.email,
+				role: user.role,
+			});
+			res.status(200).json({
+				status: "success",
+				access_token,
+			});
+		} catch (error) {
+			next(error);
+		}
+	}
 }
 
 module.exports = AuthController;
