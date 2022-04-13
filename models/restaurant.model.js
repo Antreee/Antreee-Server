@@ -16,7 +16,7 @@ const restaurants = new mongoose.Schema({
 		required: true,
 	},
 	cuisine: {
-		type: String,
+		type: [String],
 		required: true,
 	},
 	coordinate: {
