@@ -1,4 +1,4 @@
-const { Food, FoodCategory } = require("../models/food.model");
+const Food = require("../models/food.model");
 
 class FoodController {
 	static async createFoodAndCategory(req, res, next) {
@@ -9,7 +9,7 @@ class FoodController {
 				description,
 				imageUrl,
 				restaurant_Id,
-				categoryFood,
+				foodCategory,
 			} = req.body;
 			const food = await Food.create({
 				name,
@@ -17,16 +17,11 @@ class FoodController {
 				description,
 				imageUrl,
 				restaurant_Id,
-				categoryFood,
-			});
-			const category = await FoodCategory.create({
-				_id: food.categoryFood._id,
-				name: food.categoryFood.name,
+				foodCategory,
 			});
 			res.status(201).json({
 				message: "Food created successfully",
 				food,
-				category,
 			});
 		} catch (err) {
 			next(err);

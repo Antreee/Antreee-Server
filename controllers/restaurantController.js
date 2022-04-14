@@ -30,6 +30,7 @@ class RestaurantController {
 				restaurant,
 			});
 		} catch (err) {
+			console.log(err);
 			next(err);
 		}
 	}
