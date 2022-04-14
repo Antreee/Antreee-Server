@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const connection = require("../config/mongodb");
 const User = require("./user.model");
+const { isURL } = require("validator");
 
 const restaurants = new mongoose.Schema({
 	name: {
@@ -10,18 +11,25 @@ const restaurants = new mongoose.Schema({
 	logoUrl: {
 		type: String,
 		required: true,
-	},
-	address: {
-		type: String,
-		required: true,
+		validate: [isURL, "must be a valid URL"],
 	},
 	cuisine: {
 		type: [String],
 		required: true,
 	},
-	coordinate: {
+	address: {
 		type: String,
-		required: true,
+		required: [true, "please enter address"],
+	},
+	location: {
+		type: {
+			type: String,
+			enum: ["Point"],
+		},
+		coordinates: {
+			type: [Number],
+			index: "2dsphere",
+		},
 	},
 	contactNumber: {
 		type: String,
@@ -31,9 +39,10 @@ const restaurants = new mongoose.Schema({
 		type: Boolean,
 		required: true,
 	},
-	mainImageUrl: {
-		type: String,
+	mainImagesUrl: {
+		type: [String],
 		required: true,
+		validate: [isURL, "must be a valid URL"],
 	},
 	admin_Id: {
 		type: mongoose.Schema.Types.ObjectId,
