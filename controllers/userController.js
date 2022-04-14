@@ -1,3 +1,5 @@
+const Order = require("../models/order.model");
+const OrderDetail = require("../models/orderDetail.model");
 const User = require("../models/user.model");
 
 class UserController {
@@ -14,7 +16,7 @@ class UserController {
         profilePicture,
         role: "Customers",
       });
-      
+
       res.status(201).json(users);
     } catch (error) {
       console.log(error);
@@ -77,6 +79,38 @@ class UserController {
       console.log(error);
     }
   }
+
+  static async order(req, res) {
+    try {
+      const {
+        customerName,
+        customerPhoneNumber,
+        tableNumber,
+        totalPrice,
+        bookingDate,
+        numberOfPeople,
+        orderDetails,
+      } = req.body;
+
+      const createOrderDetails = await OrderDetail.create(...orderDetails);
+
+      const order = await Order.create({
+        customerName,
+        customerPhoneNumber,
+        tableNumber,
+        totalPrice,
+        bookingDate,
+        numberOfPeople,
+        status: "Unpaid",
+        orderDetails: createOrderDetails,
+      });
+
+      res.status(201).json({ message: "Order Created" });
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
 }
 
 module.exports = UserController;
