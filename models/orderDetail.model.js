@@ -1,18 +1,18 @@
 const mongoose = require("mongoose");
 const connection = require("../config/mongodb");
-// const Order = require("./order.model");
-const Food = require("./food.model")
+const Order = require("./order.model");
+const Food = require("./food.model");
 
 const orderDetail = new mongoose.Schema({
-	// orderId: {
-	// 	type: mongoose.Schema.Types.ObjectId,
-	// 	ref: Order,
-	// 	required: true,
-	// 	index: true,
-	// },
 	foodId: {
 		type: mongoose.Schema.Types.ObjectId,
 		ref: Food,
+		required: true,
+		index: true,
+	},
+	order_Id: {
+		type: mongoose.Schema.Types.ObjectId,
+		ref: Order,
 		required: true,
 		index: true,
 	},
