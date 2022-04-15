@@ -1,7 +1,6 @@
 const router = require("express").Router();
-const xenditController = require("../controllers/xenditController")
+const xenditController = require("../controllers/xenditController");
 
-router.post("/pays", xenditController.xenditInvoice);
-router.post("/callBack", xenditController.xenditCallBack);
+router.post("/callback", xenditController.xenditCallBack);
 
 module.exports = router;
