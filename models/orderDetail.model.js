@@ -4,7 +4,7 @@ const Order = require("./order.model");
 const Item = require("./item.model");
 
 const orderDetail = new mongoose.Schema({
-	ItemId: {
+	itemId: {
 		type: mongoose.Schema.Types.ObjectId,
 		ref: Item,
 		required: true,
