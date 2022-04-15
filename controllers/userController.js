@@ -92,8 +92,6 @@ class UserController {
 				orderDetails,
 			} = req.body;
 
-			// const createOrderDetails = await OrderDetail.create(...orderDetails,);
-
 			const order = await Order.create({
 				customerName,
 				customerPhoneNumber,
@@ -102,7 +100,6 @@ class UserController {
 				bookingDate,
 				numberOfPeople,
 				status: "Unpaid",
-				// orderDetails: createOrderDetails,
 			});
 
 			console.log(order._id);
@@ -114,12 +111,6 @@ class UserController {
 				});
 				console.log(orderDetail);
 			});
-
-			// const createOrderDetails = await OrderDetail.create({
-			// 	order_Id: order._id,
-			// 	...orderDetails,
-			// });
-
 			res.status(201).json({ message: "Order Created" });
 		} catch (error) {
 			console.log(error);

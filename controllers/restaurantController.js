@@ -12,7 +12,7 @@ class RestaurantController {
 				contactNumber,
 				available,
 				mainImagesUrl,
-				admin_Id,
+				adminId,
 			} = req.body;
 			console.log(req.body);
 			const restaurant = await Restaurant.create({
@@ -24,7 +24,7 @@ class RestaurantController {
 				contactNumber,
 				available,
 				mainImagesUrl,
-				admin_Id,
+				adminId,
 			});
 			res.status(201).json({
 				message: "Restaurant created successfully",

@@ -14,7 +14,7 @@
 			"https://cdn4.singleinterface.com/files/outlet/outlet_facebook_images/outlet_cover_photo/63667/banner_5_1_jpg.jpg",
 			"http://node-img.qraved.com/image/data/Indonesia/Jakarta/Medan_Satria/Domino_s_Pizza/menu1.jpg?size=s"
 		],
-		"admin_Id": "62591472c985497bca029f6f"
+		"adminId": "62591472c985497bca029f6f"
 	},
 	{
 		"name": "Pepper Lunch",
@@ -31,7 +31,7 @@
 			"https://lh5.googleusercontent.com/p/AF1QipMwboKvWtPXSVmMNUBc7TXxHncwV9F0QJ4WITpH=w1080-k-no",
 			"https://hargamenu.net/wp-content/uploads/2017/11/Daftar-Harga-Menu-Pepper-Lunch-November-2017.png"
 		],
-		"admin_Id": "625918b7fe08008bfe451aae"
+		"adminId": "625918b7fe08008bfe451aae"
 	},
 	{
 		"name": "KFC",
@@ -48,7 +48,7 @@
 			"https://i.ytimg.com/vi/THwtCeY15xg/hqdefault.jpg",
 			"https://ik.imagekit.io/tvlk/cul-asset/guys1L+Yyer9kzI3sp-pb0CG1j2bhflZGFUZOoIf1YOBAm37kEUOKR41ieUZm7ZJ/cul-assets-252301483284-b172d73b6c43cddb/culinary/asset/REST_188-720x720-FIT_AND_TRIM-850e30d4317d84859ee10b15258635f6.jpeg?tr=q-40,w-300,h-300&amp;_src=imagekit"
 		],
-		"admin_Id": "62591c45e1033952ea7c9e30"
+		"adminId": "62591c45e1033952ea7c9e30"
 	},
 	{
 		"name": "J.CO Donuts & Coffee Ringroad City Walk",
@@ -65,7 +65,7 @@
 			"https://cloudfront.gotomalls.com/uploads/retailers/pictures/L51y3tvWvzCNjyRX-jco-donut-coffee-1553567164_1.jpg",
 			"https://promoproduk.id/wp-content/uploads/2020/04/1788-00001.jpg"
 		],
-		"admin_Id": "62591e6eeecce3d7b04df855"
+		"adminId": "62591e6eeecce3d7b04df855"
 	},
 	{
 		"name": "Asoka Corner",
@@ -82,6 +82,6 @@
 			"https://t-2.tstatic.net/medan/foto/bank/images/asoka-corner_20170512_132841.jpg",
 			"https://pbs.twimg.com/profile_images/1049858204811780096/KzifXLNA_400x400.jpg"
 		],
-		"admin_Id": "625921b2572f7356eb913bc0"
+		"adminId": "625921b2572f7356eb913bc0"
 	}
 ]
