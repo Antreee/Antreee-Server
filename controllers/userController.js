@@ -103,11 +103,11 @@ class UserController {
 				status: "Unpaid",
 			});
 
-			orderDetails.forEach(async (food) => {
+			orderDetails.forEach(async (item) => {
 				const orderDetail = await OrderDetail.create({
-					order_Id: order._id,
-					foodId: food.foodId,
-					quantity: food.quantity,
+					orderId: order._id,
+					itemId: item.itemId,
+					quantity: item.quantity,
 				});
 				console.log(orderDetail);
 			});
