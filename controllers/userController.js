@@ -1,6 +1,7 @@
 const Order = require("../models/order.model");
 const OrderDetail = require("../models/orderDetail.model");
 const User = require("../models/user.model");
+const axios = require("axios");
 
 class UserController {
 	static async createUser(req, res) {
@@ -102,7 +103,6 @@ class UserController {
 				status: "Unpaid",
 			});
 
-			console.log(order._id);
 			orderDetails.forEach(async (food) => {
 				const orderDetail = await OrderDetail.create({
 					order_Id: order._id,
@@ -111,6 +111,21 @@ class UserController {
 				});
 				console.log(orderDetail);
 			});
+
+			let invoice = await axios.post(
+				"https://api.xendit.co/v2/invoices",
+				req.body,
+				{
+				  headers: {
+					Authorization: process.env.XENDIT_KEY,
+				  },
+				}
+			  );
+
+			  console.log(invoice, "<<<");
+			  let responseUrl = response.data.invoice_url;
+
+
 			res.status(201).json({ message: "Order Created" });
 		} catch (error) {
 			console.log(error);
