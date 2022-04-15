@@ -25,9 +25,11 @@ const restaurants = new mongoose.Schema({
 		type: {
 			type: String,
 			enum: ["Point"],
+			required: true,
 		},
 		coordinates: {
 			type: [Number],
+			required: true,
 			index: "2dsphere",
 		},
 	},
@@ -42,7 +44,6 @@ const restaurants = new mongoose.Schema({
 	mainImagesUrl: {
 		type: [String],
 		required: true,
-		validate: [isURL, "must be a valid URL"],
 	},
 	admin_Id: {
 		type: mongoose.Schema.Types.ObjectId,

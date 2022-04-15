@@ -15,7 +15,7 @@ class OrderController {
 		try {
 			const order = await Order.findById(req.params.id);
 			const orderDetails = await OrderDetail.find({ order_Id: req.params.id });
-			res.status(200).json({ order });
+			res.status(200).json({ orderDetails });
 		} catch (error) {
 			console.log(error);
 		}

@@ -8,21 +8,22 @@ class RestaurantController {
 				logoUrl,
 				address,
 				cuisine,
-				coordinate,
+				location,
 				contactNumber,
 				available,
-				mainImageUrl,
+				mainImagesUrl,
 				admin_Id,
 			} = req.body;
+			console.log(req.body);
 			const restaurant = await Restaurant.create({
 				name,
 				logoUrl,
 				address,
 				cuisine,
-				coordinate,
+				location,
 				contactNumber,
 				available,
-				mainImageUrl,
+				mainImagesUrl,
 				admin_Id,
 			});
 			res.status(201).json({
