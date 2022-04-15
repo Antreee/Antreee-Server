@@ -45,7 +45,7 @@ const restaurants = new mongoose.Schema({
 		type: [String],
 		required: true,
 	},
-	admin_Id: {
+	adminId: {
 		type: mongoose.Schema.Types.ObjectId,
 		ref: User,
 		required: true,

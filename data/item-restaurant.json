@@ -1,0 +1,26 @@
+[
+	{
+		"name": "NewYorker Alfredo Beef Mushroom Truffle",
+		"price": 80910,
+		"description": "Roti pizza dengan ketebalan sedang, Lembut di bagian dalam namun renyah di bagian luar, Truffle Alfredo Sauce, Keju Mozzarella, Beef Burger, Onion, Jamur Champignon, Keju Parmesan, Parsley",
+		"imageUrl": "https://dom-repo-olo-prod.oss-ap-southeast-5.aliyuncs.com/catalog/product/cache/2/image/9df78eab33525d08d6e5fb8d27136e95/n/e/newyorkeralfredobeefmushroomtrufflebig.png",
+		"restaurantId": "6259323d1974d8489091f2de",
+		"categoryItem": "food"
+	},
+	{
+		"name": "Taro Milk",
+		"price": 15455,
+		"description": "milk with taro flavor",
+		"imageUrl": "https://dom-repo-olo-prod.oss-ap-southeast-5.aliyuncs.com/catalog/product/cache/2/image/9df78eab33525d08d6e5fb8d27136e95/t/a/taro-milk_1.png",
+		"restaurantId": "6259323d1974d8489091f2de",
+		"categoryItem": "drink"
+	},
+	{
+		"name": "Chocolate Lava",
+		"price": 27273,
+		"description": "cake with chocolate lava",
+		"imageUrl": "https://dom-repo-olo-prod.oss-ap-southeast-5.aliyuncs.com/catalog/product/cache/2/small_image/187x/9df78eab33525d08d6e5fb8d27136e95/c/h/chocolate-lava-550x550px_1.png",
+		"restaurantId": "6259323d1974d8489091f2de",
+		"categoryItem": "snack"
+	}
+]
