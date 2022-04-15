@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const connection = require("../config/mongodb");
 const Restaurant = require("./restaurant.model");
-
+const { isURL } = require("validator");
 
 const food = new mongoose.Schema({
 	name: {
@@ -19,6 +19,7 @@ const food = new mongoose.Schema({
 	imageUrl: {
 		type: String,
 		required: true,
+		validate: [isURL, "Please enter a valid URL"],
 	},
 	restaurant_Id: {
 		type: mongoose.Schema.Types.ObjectId,
@@ -27,15 +28,11 @@ const food = new mongoose.Schema({
 		index: true,
 	},
 	categoryFood: {
-		name: {
-			type: String,
-			required: true,
-		},
+		type: String,
+		required: true,
 	},
 });
 
-const Food = connection.model("Food", food);
-
-
+const Food = connection.model("Item", food);
 
 module.exports = Food;
