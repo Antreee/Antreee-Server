@@ -7,7 +7,6 @@ class AuthController {
 		try {
 			const { fullName, email, password, phoneNumber, profilePicture } =
 				req.body;
-			console.log(`masuk`, req.body);
 			const user = await User.create({
 				fullName,
 				email,
@@ -54,6 +53,7 @@ class AuthController {
 				access_token,
 			});
 		} catch (error) {
+			console.log(error);
 			next(error);
 		}
 	}
