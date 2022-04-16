@@ -112,6 +112,38 @@
 		"categoryItem": "food"
 	},
 	{
+		"name": "Salmon & Chicken Combo Pepper Rice",
+		"price": 96364,
+		"description": "Two of our favorites mixed in one plate",
+		"imageUrl": "http://pepperlunch.id/wp-content/uploads/2014/10/01_salmon_and_chicken_combo_pepper_rice.jpg",
+		"restaurantId": "625a63636ab2f903486ecc75",
+		"categoryItem": "food"
+	},
+	{
+		"name": "Curry Beef Pepper Rice with Cheese",
+		"price": 96364,
+		"description": "Our Classic Beef Pepper Rice jazzed up with an aromatic blend of curry and",
+		"imageUrl": "http://pepperlunch.id/wp-content/uploads/2014/09/00_04_curry_beef_pepper_rice_with_cheese.jpg",
+		"restaurantId": "625a63636ab2f903486ecc75",
+		"categoryItem": "food"
+	},
+	{
+		"name": "Salmon & Mushroom Cream Sauce",
+		"price": 96364,
+		"description": "Endless temptation comes with the cream-filled delight",
+		"imageUrl": "http://pepperlunch.id/wp-content/uploads/2014/10/01_salmon_and_mushroom_cream_and_sauce.jpg",
+		"restaurantId": "625a63636ab2f903486ecc75",
+		"categoryItem": "food"
+	},
+	{
+		"name": "Sizzling Curry Rice with Hamburg Steak and Egg",
+		"price": 96364,
+		"description": "Combination of our delicious curry rice, delectable Hamburg & egg",
+		"imageUrl": "http://pepperlunch.id/wp-content/uploads/2014/10/01_sizzling_curry_rice_with_hamburg_steak_and_egg.jpg",
+		"restaurantId": "625a63636ab2f903486ecc75",
+		"categoryItem": "food"
+	},
+	{
 		"name": "Nestea Lemon Tea",
 		"price": 13636,
 		"description": "Our scrumptious Aussie hamburg steak",
@@ -120,10 +152,34 @@
 		"categoryItem": "drink"
 	},
 	{
-		"name": "Mix Berry Ice Cream",
+		"name": "Strawberry Ice Cream",
 		"price": 10909,
-		"description": "Our scrumptious Aussie hamburg steak",
+		"description": "Ice Cream with Strawberry topping",
+		"imageUrl": "http://pepperlunch.id/wp-content/uploads/2014/10/01_strawberry_ice_cream_small.jpg",
+		"restaurantId": "625a63636ab2f903486ecc75",
+		"categoryItem": "snack"
+	},
+	{
+		"name": "Chocolate Ice Cream",
+		"price": 10909,
+		"description": "Ice Cream with Chocolate topping",
 		"imageUrl": "http://pepperlunch.id/wp-content/uploads/2014/10/01_mix_berry_ice_cream_small.jpg",
+		"restaurantId": "625a63636ab2f903486ecc75",
+		"categoryItem": "snack"
+	},
+	{
+		"name": "Red Velvet Mousse",
+		"price": 10909,
+		"description": "Mousse with red velvet flavor",
+		"imageUrl": "http://pepperlunch.id/wp-content/uploads/2014/10/01_red_velvet.jpg",
+		"restaurantId": "625a63636ab2f903486ecc75",
+		"categoryItem": "snack"
+	},
+	{
+		"name": "Oreo Cheese",
+		"price": 10909,
+		"description": "Mousse with Oreo Cheese topping",
+		"imageUrl": "http://pepperlunch.id/wp-content/uploads/2014/10/01_oreo_cheese.jpg",
 		"restaurantId": "625a63636ab2f903486ecc75",
 		"categoryItem": "snack"
 	},
