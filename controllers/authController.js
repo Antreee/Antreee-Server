@@ -22,6 +22,7 @@ class AuthController {
 				},
 			});
 		} catch (error) {
+			console.log(error);
 			next(error);
 		}
 	}
@@ -53,7 +54,6 @@ class AuthController {
 				access_token,
 			});
 		} catch (error) {
-			console.log(error);
 			next(error);
 		}
 	}
