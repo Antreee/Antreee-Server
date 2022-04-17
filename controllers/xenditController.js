@@ -2,7 +2,7 @@ const axios = require("axios");
 const Order = require("../models/order.model");
 
 class XenditController {
-	static async xenditCallBack(req, res) {
+	static async xenditCallBack(req, res, next) {
 		try {
 			const response = await Order.findByIdAndUpdate(
 				{
@@ -17,6 +17,7 @@ class XenditController {
 			});
 		} catch (error) {
 			console.log(error);
+			next(next)
 		}
 	}
 }

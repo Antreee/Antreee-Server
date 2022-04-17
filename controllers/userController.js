@@ -4,7 +4,7 @@ const User = require("../models/user.model");
 const axios = require("axios");
 
 class UserController {
-  static async createUser(req, res) {
+  static async createUser(req, res, next) {
     try {
       const { fullName, email, password, phoneNumber, profilePicture } =
         req.body;
@@ -21,29 +21,32 @@ class UserController {
       res.status(201).json(users);
     } catch (error) {
       console.log(error);
+      next(error)
     }
   }
 
-  static async fetchUsers(req, res) {
+  static async fetchUsers(req, res, next) {
     try {
       const users = await User.find();
       res.status(200).json(users);
     } catch (error) {
       console.log(error);
+      next(error)
     }
   }
 
-  static async findUser(req, res) {
+  static async findUser(req, res, next) {
     try {
       const { id } = req.params;
       const users = await User.findById(id);
       res.status(200).json(users);
     } catch (error) {
       console.log(error);
+      next(error)
     }
   }
 
-  static async deleteUser(req, res) {
+  static async deleteUser(req, res, next) {
     try {
       const { id } = req.params;
       const users = await User.findById(id);
@@ -55,10 +58,11 @@ class UserController {
       }
     } catch (error) {
       console.log(error);
+      next(error)
     }
   }
 
-  static async updateUser(req, res) {
+  static async updateUser(req, res, next) {
     try {
       const { id } = req.params;
       const { fullName, email, password, phoneNumber, profilePicture } =
@@ -78,10 +82,11 @@ class UserController {
       }
     } catch (error) {
       console.log(error);
+      next(error)
     }
   }
 
-  static async order(req, res) {
+  static async order(req, res, next) {
     try {
       const {
         customerName,
@@ -123,7 +128,7 @@ class UserController {
           external_id: order._id,
           amount: order.totalPrice,
           payer_email: "testing@gmail.com",
-          description: "Invoice Demo #123",
+          description: `Invoice ${order._id}`,
         },
       });
       let responseUrl = responseXendit.data.invoice_url;
@@ -131,6 +136,7 @@ class UserController {
       res.status(201).json(responseUrl);
     } catch (error) {
       console.log(error);
+      next(error)
     }
   }
 }
