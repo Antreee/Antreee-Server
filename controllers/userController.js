@@ -21,7 +21,7 @@ class UserController {
       res.status(201).json(users);
     } catch (error) {
       console.log(error);
-      next(error)
+      next(error);
     }
   }
 
@@ -31,7 +31,7 @@ class UserController {
       res.status(200).json(users);
     } catch (error) {
       console.log(error);
-      next(error)
+      next(error);
     }
   }
 
@@ -42,7 +42,7 @@ class UserController {
       res.status(200).json(users);
     } catch (error) {
       console.log(error);
-      next(error)
+      next(error);
     }
   }
 
@@ -58,7 +58,7 @@ class UserController {
       }
     } catch (error) {
       console.log(error);
-      next(error)
+      next(error);
     }
   }
 
@@ -82,7 +82,7 @@ class UserController {
       }
     } catch (error) {
       console.log(error);
-      next(error)
+      next(error);
     }
   }
 
@@ -91,6 +91,7 @@ class UserController {
       const {
         customerName,
         customerPhoneNumber,
+        customerEmail,
         tableNumber,
         totalPrice,
         bookingDate,
@@ -101,6 +102,7 @@ class UserController {
       const order = await Order.create({
         customerName,
         customerPhoneNumber,
+        customerEmail,
         tableNumber,
         totalPrice,
         bookingDate,
@@ -127,7 +129,7 @@ class UserController {
         data: {
           external_id: order._id,
           amount: order.totalPrice,
-          payer_email: "testing@gmail.com",
+          payer_email: order.customerEmail,
           description: `Invoice ${order._id}`,
         },
       });
@@ -136,7 +138,7 @@ class UserController {
       res.status(201).json(responseUrl);
     } catch (error) {
       console.log(error);
-      next(error)
+      next(error);
     }
   }
 }
