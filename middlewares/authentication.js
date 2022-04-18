@@ -5,7 +5,7 @@ const authentication = async (req, res, next) => {
     try {
       const { access_token } = req.headers;
       const payload = verifyToken(access_token);
-      const user = await User.findByPk(payload.id);
+      const user = await User.findById(payload.id);
     
       if (!user) {
         throw {
