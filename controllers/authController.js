@@ -44,6 +44,7 @@ class AuthController {
 					message: "Invalid email or password",
 				};
 			}
+			console.log(user);
 			const access_token = generateToken({
 				id: user._id,
 				email: user.email,
