@@ -88,6 +88,7 @@ class UserController {
 
   static async order(req, res, next) {
     try {
+      console.log(req.body);
       const {
         customerName,
         customerPhoneNumber,
@@ -96,6 +97,7 @@ class UserController {
         totalPrice,
         bookingDate,
         numberOfPeople,
+        restaurantId,
         orderDetails,
       } = req.body;
 
@@ -107,6 +109,7 @@ class UserController {
         totalPrice,
         bookingDate,
         numberOfPeople,
+        restaurantId,
         status: "Unpaid",
       });
 
