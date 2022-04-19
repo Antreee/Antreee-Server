@@ -1,24 +1,20 @@
-const request = require('supertest')
-const app = require('../app')
-const mongoose = require('mongoose')
-const User = require('../models/user.model')
+const request = require("supertest");
+const app = require("../app");
+const mongoose = require("mongoose");
+const User = require("../models/user.model");
 
 beforeAll(async () => {
-	try {
-		await mongoose.connect("mongodb://localhost:27017/test_NuerPay");
-		const admin = await User.create({
-			email: "domino@admin.com",
-			password: "domino",
-			fullName: "asep surasep",
-			phoneNumber: "123456789",
-			role: "admin",
-			profilePicture:
-				"https://media-exp1.licdn.com/dms/image/C5103AQEufX4pz82prg/profile-displayphoto-shrink_200_200/0/1545135546054?e=1654732800&v=beta&t=3gTVvR8cwaghNeUbQJTfm9uPPKj3c2xZNlXPeFoyi7g",
-			_id: "62591472c985497bca029f6f",
-		});
-	} catch (error) {
-		console.log(error);
-	}
+	await mongoose.connect("mongodb://localhost:27017/test_NuerPay");
+	await User.create({
+		email: "domino@admin.com",
+		password: "domino",
+		fullName: "asep surasep",
+		phoneNumber: "123456789",
+		role: "admin",
+		profilePicture:
+			"https://media-exp1.licdn.com/dms/image/C5103AQEufX4pz82prg/profile-displayphoto-shrink_200_200/0/1545135546054?e=1654732800&v=beta&t=3gTVvR8cwaghNeUbQJTfm9uPPKj3c2xZNlXPeFoyi7g",
+		_id: "62591472c985497bca029f6f",
+	});
 });
 
 describe("login admin success", () => {
@@ -80,8 +76,7 @@ describe("login admin fail", () => {
 	});
 });
 
-
 afterAll(async () => {
-  await User.deleteMany()
-  await mongoose.disconnect()
-})
+	await User.deleteMany();
+	await mongoose.disconnect();
+});
