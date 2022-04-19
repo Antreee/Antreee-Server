@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const User = require("../models/user.model");
 
 beforeAll(async () => {
+
 	try {
 		await mongoose.connect("mongodb://localhost:27017/test_NuerPay");
 		const admin = await User.create({
