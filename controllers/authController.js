@@ -3,29 +3,27 @@ const { comparePassword } = require("../helpers/bcrypt");
 const User = require("../models/user.model");
 
 class AuthController {
-	static async registerAdmin(req, res, next) {
-		try {
-			const { fullName, email, password, phoneNumber, profilePicture } =
-				req.body;
-			const user = await User.create({
-				fullName,
-				email,
-				password,
-				phoneNumber,
-				profilePicture,
-				role: "admin",
-			});
-			res.status(201).json({
-				status: "success",
-				data: {
-					user,
-				},
-			});
-		} catch (error) {
-			console.log(error);
-			next(error);
-		}
-	}
+	// static async registerAdmin(req, res, next) {
+	// 	try {
+	// 		const { fullName, email, password, phoneNumber, profilePicture } = req.body;
+	// 		const user = await User.create({
+	// 			fullName,
+	// 			email,
+	// 			password,
+	// 			phoneNumber,
+	// 			profilePicture,
+	// 			role: "admin",
+	// 		});
+	// 		res.status(201).json({
+	// 			status: "success",
+	// 			data: {
+	// 				user,
+	// 			},
+	// 		});
+	// 	} catch (error) {
+	// 		next(error);
+	// 	}
+	// }
 
 	static async login(req, res, next) {
 		try {
@@ -44,7 +42,6 @@ class AuthController {
 					message: "Invalid email or password",
 				};
 			}
-			console.log(user);
 			const access_token = generateToken({
 				id: user._id,
 				email: user.email,
