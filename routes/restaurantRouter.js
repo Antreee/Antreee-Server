@@ -18,5 +18,6 @@ router.patch(
 	RestaurantController.updateRestaurantAvailability
 );
 router.get("/:id/orders", RestaurantController.getOrdersByRestaurantId);
+// router.get("/:id/booked", RestaurantController.getBookedByRestaurantId);
 
 module.exports = router;

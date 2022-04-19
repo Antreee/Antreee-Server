@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const connection = require("../config/mongodb");
+// const connection = require("../config/mongodb");
 const { isEmail } = require("validator");
 const { hashPassword } = require("../helpers/bcrypt");
 
@@ -42,6 +42,6 @@ userScema.pre("save", async function (next) {
 	}
 });
 
-const User = connection.model("user", userScema);
+const User = mongoose.model("user", userScema);
 
 module.exports = User;

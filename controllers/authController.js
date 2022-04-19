@@ -30,6 +30,7 @@ class AuthController {
 	static async login(req, res, next) {
 		try {
 			const { email, password } = req.body;
+			console.log(email, password, 77777777);
 			const user = await User.findOne({ email });
 			if (!user) {
 				throw {
@@ -37,7 +38,9 @@ class AuthController {
 					message: "Invalid email or password",
 				};
 			}
-			const isMatch = await comparePassword(password, user.password);
+			console.log(user, 888888888);
+			const isMatch = comparePassword(password, user.password);
+			console.log(isMatch, 9999999);
 			if (!isMatch) {
 				throw {
 					code: 400,

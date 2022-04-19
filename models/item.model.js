@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const connection = require("../config/mongodb");
+// const connection = require("../config/mongodb");
 const Restaurant = require("./restaurant.model");
 const { isURL } = require("validator");
 
@@ -33,6 +33,6 @@ const itemSchema = new mongoose.Schema({
 	},
 });
 
-const Item = connection.model("item", itemSchema);
+const Item = mongoose.model("item", itemSchema);
 
 module.exports = Item;
