@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const Restaurant = require("../models/restaurant.model");
 const Item = require("../models/item.model");
 const User = require("../models/user.model");
+const Order = require("../models/order.model");
 
 const domino = {
   _id: "625a63636ab2f903486ecc74",
@@ -46,29 +47,52 @@ const pepperLunch = {
   adminId: "625918b7fe08008bfe451aae",
 };
 beforeAll(async () => {
-  await mongoose.connect("mongodb://localhost:27017/test_NuerPay");
-  await Restaurant.create(domino);
-  await Restaurant.create(pepperLunch);
-  await Item.create({
-    name: "NewYorker Alfredo Beef Mushroom Truffle",
-    price: 80910,
-    description:
-      "Roti pizza dengan ketebalan sedang, Lembut di bagian dalam namun renyah di bagian luar, Truffle Alfredo Sauce, Keju Mozzarella, Beef Burger, Onion, Jamur Champignon, Keju Parmesan, Parsley",
-    imageUrl:
-      "https://dom-repo-olo-prod.oss-ap-southeast-5.aliyuncs.com/catalog/product/cache/2/image/9df78eab33525d08d6e5fb8d27136e95/n/e/newyorkeralfredobeefmushroomtrufflebig.png",
-    restaurantId: "625a63636ab2f903486ecc74",
-    categoryItem: "food",
-  });
-  await User.create({
-    email: "domino@admin.com",
-    password: "domino",
-    fullName: "asep surasep",
-    phoneNumber: "123456789",
-    role: "admin",
-    profilePicture:
-      "https://media-exp1.licdn.com/dms/image/C5103AQEufX4pz82prg/profile-displayphoto-shrink_200_200/0/1545135546054?e=1654732800&v=beta&t=3gTVvR8cwaghNeUbQJTfm9uPPKj3c2xZNlXPeFoyi7g",
-    _id: "62591472c985497bca029f6f",
-  });
+
+  
+	await mongoose.connect("mongodb://localhost:27017/test_NuerPay");
+	await Restaurant.create(domino);
+	await Restaurant.create(pepperLunch);
+	await Item.create({
+		name: "NewYorker Alfredo Beef Mushroom Truffle",
+		price: 80910,
+		description:
+			"Roti pizza dengan ketebalan sedang, Lembut di bagian dalam namun renyah di bagian luar, Truffle Alfredo Sauce, Keju Mozzarella, Beef Burger, Onion, Jamur Champignon, Keju Parmesan, Parsley",
+		imageUrl:
+			"https://dom-repo-olo-prod.oss-ap-southeast-5.aliyuncs.com/catalog/product/cache/2/image/9df78eab33525d08d6e5fb8d27136e95/n/e/newyorkeralfredobeefmushroomtrufflebig.png",
+		restaurantId: "625a63636ab2f903486ecc74",
+		categoryItem: "food",
+	});
+	await User.create({
+		email: "domino@admin.com",
+		password: "domino",
+		fullName: "asep surasep",
+		phoneNumber: "123456789",
+		role: "admin",
+		profilePicture:
+			"https://media-exp1.licdn.com/dms/image/C5103AQEufX4pz82prg/profile-displayphoto-shrink_200_200/0/1545135546054?e=1654732800&v=beta&t=3gTVvR8cwaghNeUbQJTfm9uPPKj3c2xZNlXPeFoyi7g",
+		_id: "62591472c985497bca029f6f",
+	});
+	await Order.create({
+		customerName: "adit19",
+		customerPhoneNumber: "083647584938",
+		customerEmail: "adit@mail.com",
+		tableNumber: "A-12",
+		totalPrice: 500000,
+		bookingDate: "",
+		numberOfPeople: "",
+		status: "Unpaid",
+		restaurantId: "625a63636ab2f903486ecc74",
+		orderDetails: [
+			{
+				itemId: "62583b12aa7f55aa593dcacd",
+				quantity: 100,
+			},
+			{
+				itemId: "6257090a69627e5b51c559a6",
+				quantity: 99,
+			},
+		],
+	});
 });
 
 describe("- Success Get Restaurants -", () => {
@@ -126,7 +150,6 @@ describe("- Success Get Restaurants -", () => {
       const res = await request(app).get(
         "/restaurants/625a63636ab2f903486ecc74/items"
       );
-
       expect(res.status).toBe(200);
       expect(res.body).toBeInstanceOf(Object);
       expect(res.body).toHaveProperty("message", expect.any(String));
@@ -161,23 +184,127 @@ describe("- Success Get Restaurants -", () => {
   });
 });
 
-describe("get restaurant --- failed", () => {
-  describe("- fail Get Restaurant Item By Restaurant Id -", () => {
-    it("get restaurant item by restaurant id - failed get restaurant", async () => {
-      const res = await request(app).get(
-        "/restaurants/625a63636ab2f903486ecc75/items"
-      );
+  
+	describe("- Success Get Restaurant order By Restaurant Id -", () => {
+		it("get restaurant order by restaurant id - success get restaurant", async () => {
+			const payload = {
+				email: "domino@admin.com",
+				password: "domino",
+			};
+			const loginResponse = await request(app)
+				.post("/admin/login")
+				.send(payload);
+			const access_token = loginResponse.body.access_token;
+			const res = await request(app)
+				.get("/restaurants/625a63636ab2f903486ecc74/orders")
+				.set("access_token", access_token);
 
-      expect(res.status).toBe(404);
-      expect(res.body).toBeInstanceOf(Object);
-      expect(res.body).toHaveProperty("message", expect.any(String));
-      expect(res.body).toHaveProperty("message", res.body.message);
-    });
-  });
+			expect(res.status).toBe(200);
+			expect(res.body).toBeInstanceOf(Object);
+			expect(res.body).toHaveProperty("message", expect.any(String));
+			expect(res.body).toHaveProperty("message", res.body.message);
+			expect(res.body).toHaveProperty("orders", expect.any(Array));
+		});
+	});
+
+
+	describe("get restaurant --- failed", () => {
+		describe("- fail Get Restaurant Item By Restaurant Id -", () => {
+			it("get restaurant item by restaurant id - failed get restaurant", async () => {
+				const res = await request(app).get(
+					"/restaurants/625a63636ab2f903486ecc75/items"
+				);
+
+				expect(res.status).toBe(404);
+				expect(res.body).toBeInstanceOf(Object);
+				expect(res.body).toHaveProperty("message", expect.any(String));
+				expect(res.body).toHaveProperty("message", res.body.message);
+			});
+		});
+
+		describe("- fail Get Restaurant orders By Restaurant Id -", () => {
+			it("get restaurant order by restaurant id - failed get restaurant", async () => {
+				const payload = {
+					email: "domino@admin.com",
+					password: "domino",
+				};
+				const loginResponse = await request(app)
+					.post("/admin/login")
+					.send(payload);
+				const access_token = loginResponse.body.access_token;
+				const res = await request(app)
+					.get("/restaurants/625a63636ab2f903486ecc80/orders")
+					.set("access_token", access_token);
+
+				expect(res.status).toBe(404);
+				expect(res.body).toBeInstanceOf(Object);
+				expect(res.body).toHaveProperty("message", expect.any(String));
+				expect(res.body).toHaveProperty("message", res.body.message);
+			});
+		});
+
+		describe("- fail Get Restaurant orders By Restaurant Id -", () => {
+			it("get restaurant order by restaurant id - failed get restaurant", async () => {
+				const payload = {
+					email: "domino@admin.com",
+					password: "domino",
+				};
+				const loginResponse = await request(app)
+					.post("/admin/login")
+					.send(payload);
+				const access_token = loginResponse.body.access_token;
+				const res = await request(app)
+					.get("/restaurants/625a63636ab2f903486ecc80/orders")
+					.set(
+						"access_token",
+						"yJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNTkxNDcyYzk4NTQ5N2JjYTAyOWY2ZiIsImVtYWlsIjoiZG9taW5vQGFkbWluLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY1MDM3OTI4NX0.phptXkZr03LDfkg1TFTdMtmXu4LOTqCZu2oVLfwHjBQ"
+					);
+
+				expect(res.status).toBe(401);
+				expect(res.body).toBeInstanceOf(Object);
+				expect(res.body).toHaveProperty("message", expect.any(String));
+				expect(res.body).toHaveProperty("message", res.body.message);
+			});
+		});
+	});
+});
+
+describe("Get restaurant --- Success", () => {
+	describe("- success Get Restaurant Item By Restaurant Id -", () => {
+		it("get restaurant item by restaurant id", async () => {
+			const res = await request(app).get(
+				"/restaurants/625a63636ab2f903486ecc74"
+			);
+			const { status, body } = res
+			expect(status).toBe(200);
+			expect(body).toBeInstanceOf(Object);
+		});
+	});
+});
+describe("Get restaurant by id --- Failed", () => {
+	it("faill get restaurant by id with wrong id", async () => {
+		const res = await request(app).get(
+			"/restaurants/ "
+		);
+		const { status, body } = res
+		expect(status).toBe(400);
+		expect(body).toBeInstanceOf(Object);
+		expect(body).toHaveProperty("message", "Invalid restaurant id");
+	});
+	it("faill get restaurant by id with wrong id", async () => {
+		const res = await request(app).get(
+			"/restaurants/123sdfbf34er45"
+		);
+		const { status, body } = res
+		expect(status).toBe(400);
+		expect(body).toBeInstanceOf(Object);
+		expect(body).toHaveProperty("message", "Invalid restaurant id");
+	});
 });
 
 afterAll(async () => {
-  await Restaurant.deleteMany();
-  await User.deleteMany();
-  await mongoose.disconnect();
+	await Restaurant.deleteMany();
+	await User.deleteMany();
+	await Order.deleteMany();
+	await mongoose.disconnect();
 });

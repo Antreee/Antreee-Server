@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-// const connection = require("../config/mongodb");
 const Restaurant = require("./restaurant.model");
 const { isURL } = require("validator");
 
