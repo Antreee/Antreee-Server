@@ -151,6 +151,39 @@ describe("get restaurant --- failed", () => {
 	});
 });
 
+describe("Get restaurant --- Success", () => {
+	describe("- success Get Restaurant Item By Restaurant Id -", () => {
+		it("get restaurant item by restaurant id", async () => {
+			const res = await request(app).get(
+				"/restaurants/625a63636ab2f903486ecc74"
+			);
+			const { status, body } = res
+			expect(status).toBe(200);
+			expect(body).toBeInstanceOf(Object);
+		});
+	});
+});
+describe("Get restaurant by id --- Failed", () => {
+	it("faill get restaurant by id with wrong id", async () => {
+		const res = await request(app).get(
+			"/restaurants/ "
+		);
+		const { status, body } = res
+		expect(status).toBe(400);
+		expect(body).toBeInstanceOf(Object);
+		expect(body).toHaveProperty("message", "Invalid restaurant id");
+	});
+	it("faill get restaurant by id with wrong id", async () => {
+		const res = await request(app).get(
+			"/restaurants/123sdfbf34er45"
+		);
+		const { status, body } = res
+		expect(status).toBe(400);
+		expect(body).toBeInstanceOf(Object);
+		expect(body).toHaveProperty("message", "Invalid restaurant id");
+	});
+});
+
 afterAll(async () => {
 	await Restaurant.deleteMany();
 	await User.deleteMany();
