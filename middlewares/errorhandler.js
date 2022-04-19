@@ -30,6 +30,10 @@ module.exports = (err, req, res, next) => {
 			return (err = handleValidationError(err, res));
 		if (err.code && err.code == 11000)
 			return (err = handleDuplicateKeyError(err, res));
+		if (err.message === "Invalid email or password")
+			return res.status(400).send({ message: err.message });
+		if (err.name === "InvalidUser")
+			return res.status(401).send({ message: err.message });
 	} catch (err) {
 		res.status(500).send("An unknown error occurred.");
 	}

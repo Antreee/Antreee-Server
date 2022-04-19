@@ -111,6 +111,18 @@ class RestaurantController {
 			next(error);
 		}
 	}
+
+	static async getBookedByRestaurantId(req, res, next) {
+		try {
+			const orders = await Order.find({
+				restaurantId: req.params.id,
+				status: "Booked",
+			});
+			res.status(200).json(orders);
+		} catch (error) {
+			next(error);
+		}
+	}
 }
 
 module.exports = RestaurantController;

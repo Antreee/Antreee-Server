@@ -43,15 +43,10 @@ describe("get restaurant", () => {
 			console.log("res: ", res);
 			expect(res.status).toBe(200);
 			// expect(res.body).toBeInstanceOf(Array);
-			// expect(res.body.length).toBeGreaterThanOrEqual(20);
 		});
 	});
 });
 
 afterAll(async () => {
-	// const database = client.db("palmsBallroom");
-	// const ballroom = database.collection("ballrooms");
-	// await ballroom.deleteMany({})
-	// await Restaurant.deleteMany();
 	await mongoose.disconnect();
 });
