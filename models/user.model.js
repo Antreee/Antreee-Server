@@ -36,9 +36,8 @@ userScema.pre("save", async function (next) {
 	try {
 		this.password = await hashPassword(this.password);
 		next();
-	} catch (error) {
-		console.log(error);
-		next(error);
+	} catch (err) {
+		next(err);
 	}
 });
 
