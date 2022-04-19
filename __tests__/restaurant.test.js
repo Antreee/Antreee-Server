@@ -267,7 +267,6 @@ describe("- Success Get Restaurants -", () => {
 			});
 		});
 	});
-});
 
 describe("Get restaurant --- Success", () => {
 	describe("- success Get Restaurant Item By Restaurant Id -", () => {
