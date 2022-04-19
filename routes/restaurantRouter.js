@@ -21,10 +21,10 @@ router.get(
 	authentication,
 	RestaurantController.getOrdersByRestaurantId
 );
-// router.get(
-// 	"/:id/booked",
-// 	authentication,
-// 	RestaurantController.getBookedByRestaurantId
-// );
+router.get(
+	"/:id/booked",
+	authentication,
+	RestaurantController.getBookedByRestaurantId
+);
 
 module.exports = router;
