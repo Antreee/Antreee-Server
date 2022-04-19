@@ -1,6 +1,4 @@
 const mongoose = require("mongoose");
-// const connection = require("../config/mongodb");
-// const OrderDetail = require("./orderDetail.model");
 const Restaurant = require("./restaurant.model");
 
 const order = new mongoose.Schema({
