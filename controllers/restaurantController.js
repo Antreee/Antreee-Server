@@ -101,7 +101,10 @@ class RestaurantController {
 
 	static async getOrdersByRestaurantId(req, res, next) {
 		try {
-			const orders = await Order.find({ restaurantId: req.params.id });
+			const orders = await Order.find({
+				restaurantId: req.params.id,
+				status: "Unpaid" || "PAID",
+			});
 			res.status(200).json(orders);
 		} catch (error) {
 			console.log(error);
