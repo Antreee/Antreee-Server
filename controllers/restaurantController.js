@@ -1,7 +1,6 @@
 const Restaurant = require("../models/restaurant.model");
 const Order = require("../models/order.model");
 const OrderDetail = require("../models/orderDetail.model");
-const mongoose = require("mongoose");
 const Item = require("../models/item.model");
 
 class RestaurantController {
@@ -98,18 +97,36 @@ class RestaurantController {
     }
   }
 
-  // static async getOrdersByRestaurantId(req, res, next) {
-  // 	try {
-  // 		const orders = await Order.find({
-  // 			restaurantId: req.params.id,
-  // 			status: "Unpaid" || "PAID",
-  // 		});
-  // 		res.status(200).json(orders);
-  // 	} catch (error) {
-  // 		console.log(error);
-  // 		next(error);
-  // 	}
-  // }
+	static async getOrdersByRestaurantId(req, res, next) {
+		try {
+			const { id } = req.params;
+			if (!id) {
+				throw {
+					code: 404,
+					name: "NotFound",
+					message: "not found",
+				};
+			}
+			const orders = await Order.find({
+				restaurantId: id,
+				status: "Unpaid" || "PAID",
+			});
+			if (orders.length == 0) {
+				throw {
+					code: 404,
+					name: "NotFound",
+					message: "not found",
+				};
+			}
+			res
+				.status(200)
+				.json({ message: "Orders retrieved successfully", orders });
+		} catch (error) {
+			console.log(error);
+			next(error);
+		}
+	}
+
 
   // static async getBookedByRestaurantId(req, res, next) {
   // 	try {

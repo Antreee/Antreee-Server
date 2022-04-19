@@ -1,3 +1,5 @@
+const { JsonWebTokenError } = require("jsonwebtoken");
+
 //handle email or usename duplicates
 const handleDuplicateKeyError = (err, res) => {
 	const field = Object.keys(err.keyValue);
@@ -12,9 +14,14 @@ const handleValidationError = (err, res) => {
 	let code = 400;
 	if (errors.length > 1) {
 		const formattedErrors = errors.join("");
-		res.status(code).send({ messages: formattedErrors, fields: `${fields} is required` });
+		res
+			.status(code)
+			.send({ messages: formattedErrors, fields: `${fields} is required` });
 	} else {
-		res.status(code).send({ messages: errors, fields: `${fields} is required` });
+		res
+			.status(code)
+			.send({ messages: errors, fields: `${fields} is required` });
+
 	}
 };
 
@@ -32,9 +39,13 @@ module.exports = (err, req, res, next) => {
 			return res.status(401).send({ message: err.message });
 		if (err.name === "NotFound")
 			return res.status(404).send({ message: err.message });
-		if (err.name === "BadRequest") return res.status(400).send({ message: err.message });
-		if (err.name === "BSONTypeError") return res.status(400).send({ message: "Invalid order id" });
-		if (err.name === "CastError") return res.status(400).send({ message: "Invalid restaurant id" });
+		if (err.name === "BadRequest")
+			return res.status(400).send({ message: err.message });
+		if (err.name === "BSONTypeError")
+			return res.status(400).send({ message: "Invalid order id" });
+		if (err.name === "JsonWebTokenError")
+			return res.status(401).send({ message: "Invalid Token" });
+    if (err.name === "CastError") return res.status(400).send({ message: "Invalid restaurant id" });
 		if (err.name === "TypeError") return res.status(400).send({ message: "Invalid restaurant id" });
 	} catch (err) {
 		res.status(500).send("An unknown error occurred.");

@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-// const connection = require("../config/mongodb");
 const { isEmail } = require("validator");
 const { hashPassword } = require("../helpers/bcrypt");
 

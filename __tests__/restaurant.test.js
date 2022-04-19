@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const Restaurant = require("../models/restaurant.model");
 const Item = require("../models/item.model");
 const User = require("../models/user.model");
+const Order = require("../models/order.model");
 
 const domino = {
 	_id: "625a63636ab2f903486ecc74",
@@ -69,6 +70,27 @@ beforeAll(async () => {
 			"https://media-exp1.licdn.com/dms/image/C5103AQEufX4pz82prg/profile-displayphoto-shrink_200_200/0/1545135546054?e=1654732800&v=beta&t=3gTVvR8cwaghNeUbQJTfm9uPPKj3c2xZNlXPeFoyi7g",
 		_id: "62591472c985497bca029f6f",
 	});
+	await Order.create({
+		customerName: "adit19",
+		customerPhoneNumber: "083647584938",
+		customerEmail: "adit@mail.com",
+		tableNumber: "A-12",
+		totalPrice: 500000,
+		bookingDate: "",
+		numberOfPeople: "",
+		status: "Unpaid",
+		restaurantId: "625a63636ab2f903486ecc74",
+		orderDetails: [
+			{
+				itemId: "62583b12aa7f55aa593dcacd",
+				quantity: 100,
+			},
+			{
+				itemId: "6257090a69627e5b51c559a6",
+				quantity: 99,
+			},
+		],
+	});
 });
 
 describe("- Success Get Restaurants -", () => {
@@ -121,12 +143,33 @@ describe("- Success Get Restaurants -", () => {
 		expect(res.body[0].mainImagesUrl).toBeInstanceOf(Array);
 	});
 
+	describe("- Success Get Restaurant order By Restaurant Id -", () => {
+		it("get restaurant order by restaurant id - success get restaurant", async () => {
+			const payload = {
+				email: "domino@admin.com",
+				password: "domino",
+			};
+			const loginResponse = await request(app)
+				.post("/admin/login")
+				.send(payload);
+			const access_token = loginResponse.body.access_token;
+			const res = await request(app)
+				.get("/restaurants/625a63636ab2f903486ecc74/orders")
+				.set("access_token", access_token);
+
+			expect(res.status).toBe(200);
+			expect(res.body).toBeInstanceOf(Object);
+			expect(res.body).toHaveProperty("message", expect.any(String));
+			expect(res.body).toHaveProperty("message", res.body.message);
+			expect(res.body).toHaveProperty("orders", expect.any(Array));
+		});
+	});
+
 	describe("- Success Get Restaurant Item By Restaurant Id -", () => {
 		it("get restaurant item by restaurant id - success get restaurant", async () => {
 			const res = await request(app).get(
 				"/restaurants/625a63636ab2f903486ecc74/items"
 			);
-
 			expect(res.status).toBe(200);
 			expect(res.body).toBeInstanceOf(Object);
 			expect(res.body).toHaveProperty("message", expect.any(String));
@@ -134,19 +177,64 @@ describe("- Success Get Restaurants -", () => {
 			expect(res.body).toHaveProperty("item", expect.any(Array));
 		});
 	});
-});
 
-describe("get restaurant --- failed", () => {
-	describe("- fail Get Restaurant Item By Restaurant Id -", () => {
-		it("get restaurant item by restaurant id - failed get restaurant", async () => {
-			const res = await request(app).get(
-				"/restaurants/625a63636ab2f903486ecc75/items"
-			);
+	describe("get restaurant --- failed", () => {
+		describe("- fail Get Restaurant Item By Restaurant Id -", () => {
+			it("get restaurant item by restaurant id - failed get restaurant", async () => {
+				const res = await request(app).get(
+					"/restaurants/625a63636ab2f903486ecc75/items"
+				);
 
-			expect(res.status).toBe(404);
-			expect(res.body).toBeInstanceOf(Object);
-			expect(res.body).toHaveProperty("message", expect.any(String));
-			expect(res.body).toHaveProperty("message", res.body.message);
+				expect(res.status).toBe(404);
+				expect(res.body).toBeInstanceOf(Object);
+				expect(res.body).toHaveProperty("message", expect.any(String));
+				expect(res.body).toHaveProperty("message", res.body.message);
+			});
+		});
+
+		describe("- fail Get Restaurant orders By Restaurant Id -", () => {
+			it("get restaurant order by restaurant id - failed get restaurant", async () => {
+				const payload = {
+					email: "domino@admin.com",
+					password: "domino",
+				};
+				const loginResponse = await request(app)
+					.post("/admin/login")
+					.send(payload);
+				const access_token = loginResponse.body.access_token;
+				const res = await request(app)
+					.get("/restaurants/625a63636ab2f903486ecc80/orders")
+					.set("access_token", access_token);
+
+				expect(res.status).toBe(404);
+				expect(res.body).toBeInstanceOf(Object);
+				expect(res.body).toHaveProperty("message", expect.any(String));
+				expect(res.body).toHaveProperty("message", res.body.message);
+			});
+		});
+
+		describe("- fail Get Restaurant orders By Restaurant Id -", () => {
+			it("get restaurant order by restaurant id - failed get restaurant", async () => {
+				const payload = {
+					email: "domino@admin.com",
+					password: "domino",
+				};
+				const loginResponse = await request(app)
+					.post("/admin/login")
+					.send(payload);
+				const access_token = loginResponse.body.access_token;
+				const res = await request(app)
+					.get("/restaurants/625a63636ab2f903486ecc80/orders")
+					.set(
+						"access_token",
+						"yJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNTkxNDcyYzk4NTQ5N2JjYTAyOWY2ZiIsImVtYWlsIjoiZG9taW5vQGFkbWluLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY1MDM3OTI4NX0.phptXkZr03LDfkg1TFTdMtmXu4LOTqCZu2oVLfwHjBQ"
+					);
+
+				expect(res.status).toBe(401);
+				expect(res.body).toBeInstanceOf(Object);
+				expect(res.body).toHaveProperty("message", expect.any(String));
+				expect(res.body).toHaveProperty("message", res.body.message);
+			});
 		});
 	});
 });
@@ -187,5 +275,6 @@ describe("Get restaurant by id --- Failed", () => {
 afterAll(async () => {
 	await Restaurant.deleteMany();
 	await User.deleteMany();
+	await Order.deleteMany();
 	await mongoose.disconnect();
 });

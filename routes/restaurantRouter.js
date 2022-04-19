@@ -16,11 +16,11 @@ router.patch(
 	authentication,
 	RestaurantController.updateRestaurantAvailability
 );
-// router.get(
-// 	"/:id/orders",
-// 	authentication,
-// 	RestaurantController.getOrdersByRestaurantId
-// );
+router.get(
+	"/:id/orders",
+	authentication,
+	RestaurantController.getOrdersByRestaurantId
+);
 // router.get(
 // 	"/:id/booked",
 // 	authentication,

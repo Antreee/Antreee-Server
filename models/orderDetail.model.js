@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-// const connection = require("../config/mongodb");
 const Order = require("./order.model");
 const Item = require("./item.model");
 
