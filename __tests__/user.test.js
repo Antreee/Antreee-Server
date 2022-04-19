@@ -4,7 +4,6 @@ const mongoose = require("mongoose");
 const User = require("../models/user.model");
 
 beforeAll(async () => {
-	jest.setTimeout(90 * 1000)
 	try {
 		await mongoose.connect("mongodb://localhost:27017/test_NuerPay");
 		const admin = await User.create({
@@ -18,7 +17,7 @@ beforeAll(async () => {
 			_id: "62591472c985497bca029f6f",
 		});
 	} catch (error) {
-		console.log(error < "ini ereor di test nya");
+		console.log(error);
 	}
 });
 
@@ -81,68 +80,6 @@ describe("login admin fail", () => {
 		expect(body).toHaveProperty("message", "Invalid email or password");
 	});
 });
-
-
-
-// test("404 Failed login with no email - should return error", (done) => {
-// 	request(app)
-// 		.post("/login")
-// 		.send({
-// 			email: "",
-// 			password: "domino",
-// 		})
-// 		.end((err, res) => {
-// 			if (err) return done(err);
-// 			const { status } = res;
-// 			expect(status).toBe(404);
-// 			return done();
-// 		});
-// });
-// it("404 Failed login wrong email - should return error", (done) => {
-// 	jest.setTimeout(6000)
-// 	request(app)
-// 		.post("/admin/login")
-// 		.send({
-// 			email: "emailwrong@mail.com",
-// 			password: "domino",
-// 		})
-// 		.end((err, res) => {
-// 			if (err) return done(err);
-// 			const { body, status } = res;
-// 			console.log("🚀 ~ file: user.test.js ~ line 58 ~ .end ~ body", body)
-// 			expect(status).toBe(404);
-// 			return done();
-// 		});
-// });
-// test("404 Failed login wrong password - should return error", (done) => {
-// 	request(app)
-// 		.post("/login")
-// 		.send({
-// 			email: "domino@admin.com",
-// 			password: "wrongpassword",
-// 		})
-// 		.end((err, res) => {
-// 			if (err) return done(err);
-// 			const { status } = res;
-// 			expect(status).toBe(404);
-// 			return done();
-// 		});
-// });
-// test("404 Failed login with no password - should return error", (done) => {
-// 	request(app)
-// 		.post("/login")
-// 		.send({
-// 			email: "domino@admin.com",
-// 			password: "",
-// 		})
-// 		.end((err, res) => {
-// 			if (err) return done(err);
-// 			const { status } = res;
-// 			expect(status).toBe(404);
-// 			return done();
-// 		});
-// });
-
 
 afterAll(async () => {
 	await User.deleteMany();
