@@ -15,7 +15,6 @@ class RestaurantController {
         mainImagesUrl,
         adminId,
       } = req.body;
-      console.log(req.body);
       const restaurant = await Restaurant.create({
         name,
         logoUrl,

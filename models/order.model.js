@@ -15,7 +15,6 @@ const order = new mongoose.Schema({
 	},
 	totalPrice: {
 		type: Number,
-		required: true,
 	},
 	bookingDate: {
 		type: String,
@@ -28,7 +27,6 @@ const order = new mongoose.Schema({
 	},
 	customerEmail: {
 		type: String,
-		required: true,
 	},
 	restaurantId: {
 		type: mongoose.Schema.Types.ObjectId,
