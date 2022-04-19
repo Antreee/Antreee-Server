@@ -21,13 +21,14 @@ const handleValidationError = (err, res) => {
 		res
 			.status(code)
 			.send({ messages: errors, fields: `${fields} is required` });
+
 	}
 };
 
 module.exports = (err, req, res, next) => {
 	try {
 		console.log("congrats you hit the error middleware");
-		console.log(err, "<<<");
+		console.log(err.name, "<<<", err, "<<<");
 		if (err.name === "ValidationError")
 			return (err = handleValidationError(err, res));
 		if (err.code && err.code == 11000)
@@ -44,6 +45,8 @@ module.exports = (err, req, res, next) => {
 			return res.status(400).send({ message: "Invalid order id" });
 		if (err.name === "JsonWebTokenError")
 			return res.status(401).send({ message: "Invalid Token" });
+    if (err.name === "CastError") return res.status(400).send({ message: "Invalid restaurant id" });
+		if (err.name === "TypeError") return res.status(400).send({ message: "Invalid restaurant id" });
 	} catch (err) {
 		res.status(500).send("An unknown error occurred.");
 	}
