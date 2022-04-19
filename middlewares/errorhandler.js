@@ -23,18 +23,18 @@ const handleValidationError = (err, res) => {
 };
 
 module.exports = (err, req, res, next) => {
-  try {
-    console.log("congrats you hit the error middleware");
-    if (err.name === "ValidationError")
-      return (err = handleValidationError(err, res));
-    if (err.code && err.code == 11000)
-      return (err = handleDuplicateKeyError(err, res));
-    if (err.name == "NotFound") {
-      return res.status(err.code).json({ message: err.message });
-    }
-    if (err.message === "Invalid email or password")
+	try {
+		console.log("congrats you hit the error middleware");
+		console.log(err, "<<<");
+		if (err.name === "ValidationError")
+			return (err = handleValidationError(err, res));
+		if (err.code && err.code == 11000)
+			return (err = handleDuplicateKeyError(err, res));
+		if (err.message === "Invalid email or password")
 			return res.status(400).send({ message: err.message });
-  } catch (err) {
-    res.status(500).send("An unknown error occurred.");
-  }
+		if (err.name === "InvalidUser")
+			return res.status(401).send({ message: err.message });
+	} catch (err) {
+		res.status(500).send("An unknown error occurred.");
+	}
 };
