@@ -1,10 +1,9 @@
-const request = require("supertest");
-const app = require("../app");
-const mongoose = require("mongoose");
-const User = require("../models/user.model");
+const request = require('supertest')
+const app = require('../app')
+const mongoose = require('mongoose')
+const User = require('../models/user.model')
 
 beforeAll(async () => {
-
 	try {
 		await mongoose.connect("mongodb://localhost:27017/test_NuerPay");
 		const admin = await User.create({
@@ -82,7 +81,8 @@ describe("login admin fail", () => {
 	});
 });
 
+
 afterAll(async () => {
-	await User.deleteMany();
-	await mongoose.disconnect();
-});
+  await User.deleteMany()
+  await mongoose.disconnect()
+})
