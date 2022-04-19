@@ -7,6 +7,7 @@ const handleDuplicateKeyError = (err, res) => {
 };
 //handle field formatting, empty fields, and mismatched passwords
 const handleValidationError = (err, res) => {
+	console.log(err, res, "{{====={{====")
 	let errors = Object.values(err.errors).map((el) => el.message);
 	let fields = Object.values(err.errors).map((el) => el.path);
 	let code = 400;
@@ -30,6 +31,9 @@ module.exports = (err, req, res, next) => {
 			return (err = handleValidationError(err, res));
 		if (err.code && err.code == 11000)
 			return (err = handleDuplicateKeyError(err, res));
+		if (err.message === "Invalid email or password")
+			return res.status(400).send({ message: err.message });
+		return (err = handleDuplicateKeyError(err, res));
 	} catch (err) {
 		res.status(500).send("An unknown error occurred.");
 	}
