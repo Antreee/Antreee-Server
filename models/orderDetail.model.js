@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const connection = require("../config/mongodb");
+// const connection = require("../config/mongodb");
 const Order = require("./order.model");
 const Item = require("./item.model");
 
@@ -21,6 +21,6 @@ const orderDetail = new mongoose.Schema({
 	},
 });
 
-const OrderDetail = connection.model("OrderDetail", orderDetail);
+const OrderDetail = mongoose.model("OrderDetail", orderDetail);
 
 module.exports = OrderDetail;
