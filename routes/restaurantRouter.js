@@ -3,7 +3,7 @@ const RestaurantController = require("../controllers/restaurantController");
 const FoodController = require("../controllers/itemController");
 const authentication = require("../middlewares/authentication");
 
-router.post("/", RestaurantController.createRestaurant);
+// router.post("/", RestaurantController.createRestaurant);
 router.get(
 	"/admin",
 	authentication,
@@ -17,7 +17,11 @@ router.patch(
 	authentication,
 	RestaurantController.updateRestaurantAvailability
 );
-router.get("/:id/orders", RestaurantController.getOrdersByRestaurantId);
+router.get(
+	"/:id/orders",
+	authentication,
+	RestaurantController.getOrdersByRestaurantId
+);
 // router.get("/:id/booked", RestaurantController.getBookedByRestaurantId);
 
 module.exports = router;

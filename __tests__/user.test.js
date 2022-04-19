@@ -32,8 +32,7 @@ describe("login admin", () => {
 			const res = await request(app).post("/admin/login").send(payload);
 			console.log("res: ", res);
 			expect(res.status).toBe(200);
-			// expect(res.body).toBeInstanceOf(Array);
-			// expect(res.body.length).toBeGreaterThanOrEqual(20);
+			expect(body).toHaveProperty("access_token", expect.any(String));
 		});
 	});
 });
