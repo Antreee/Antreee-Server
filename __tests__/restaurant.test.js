@@ -1,10 +1,14 @@
-const request = require('supertest')
-const app = require('../app')
-const mongoose = require('mongoose')
-const Restaurant = require('../models/restaurant.model')
+
+const request = require("supertest");
+const app = require("../app");
+const mongoose = require("mongoose");
+const Restaurant = require("../models/restaurant.model");
+const Item = require("../models/item.model");
 const User = require('../models/user.model')
 
+
 const domino = {
+   _id: "625a63636ab2f903486ecc74",
   name: "Domino's Pizza",
   logoUrl:
     'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Domino%27s_pizza_logo.svg/1200px-Domino%27s_pizza_logo.svg.png',
@@ -43,26 +47,22 @@ const pepperLunch = {
   adminId: '625918b7fe08008bfe451aae',
 }
 beforeAll(async () => {
-  await mongoose.connect('mongodb://localhost:27017/test_NuerPay')
-  await User.create({
-    email: 'domino@admin.com',
-    password: 'domino',
-    fullName: 'asep surasep',
-    phoneNumber: '123456789',
-    role: 'admin',
-    profilePicture:
-      'https://media-exp1.licdn.com/dms/image/C5103AQEufX4pz82prg/profile-displayphoto-shrink_200_200/0/1545135546054?e=1654732800&v=beta&t=3gTVvR8cwaghNeUbQJTfm9uPPKj3c2xZNlXPeFoyi7g',
-    _id: '62591472c985497bca029f6f',
-  })
-  await Restaurant.create(domino)
-  await Restaurant.create(pepperLunch)
-})
 
-afterAll(async () => {
-  await Restaurant.deleteMany()
-  await User.deleteMany()
-  await mongoose.disconnect()
-})
+    await mongoose.connect("mongodb://localhost:27017/test_NuerPay");
+   await Restaurant.create(domino)
+  await Restaurant.create(pepperLunch)
+    const item = await Item.create({
+      name: "NewYorker Alfredo Beef Mushroom Truffle",
+      price: 80910,
+      description:
+        "Roti pizza dengan ketebalan sedang, Lembut di bagian dalam namun renyah di bagian luar, Truffle Alfredo Sauce, Keju Mozzarella, Beef Burger, Onion, Jamur Champignon, Keju Parmesan, Parsley",
+      imageUrl:
+        "https://dom-repo-olo-prod.oss-ap-southeast-5.aliyuncs.com/catalog/product/cache/2/image/9df78eab33525d08d6e5fb8d27136e95/n/e/newyorkeralfredobeefmushroomtrufflebig.png",
+      restaurantId: "625a63636ab2f903486ecc74",
+      categoryItem: "food",
+    });
+
+});
 
 describe('- Success Get Restaurants -', () => {
   it('Should Get All Restaurants', async () => {
@@ -86,8 +86,8 @@ describe('- Success Get Restaurants -', () => {
       expect(restaurant.mainImagesUrl).toBeInstanceOf(Array)
     })
   })
-
-  it('Should Get Restaurant by Admin ID', async () => {
+  
+ it('Should Get Restaurant by Admin ID', async () => {
     const payload = {
       email: 'domino@admin.com',
       password: 'domino',
@@ -114,4 +114,43 @@ describe('- Success Get Restaurants -', () => {
     expect(res.body[0]).toHaveProperty('logoUrl', expect.any(String))
     expect(res.body[0].mainImagesUrl).toBeInstanceOf(Array)
   })
-})
+  
+  describe("- Success Get Restaurant Item By Restaurant Id -", () => {
+    it("get restaurant item by restaurant id - success get restaurant", async () => {
+      const res = await request(app).get(
+        "/restaurants/625a63636ab2f903486ecc74/items"
+      );
+
+      expect(res.status).toBe(200);
+      expect(res.body).toBeInstanceOf(Object);
+      expect(res.body).toHaveProperty("message", expect.any(String));
+      expect(res.body).toHaveProperty("message", res.body.message);
+      expect(res.body).toHaveProperty("item", expect.any(Array));
+    });
+  });
+});
+
+describe("get restaurant --- failed", () => {
+  describe("- fail Get Restaurant Item By Restaurant Id -", () => {
+    it("get restaurant item by restaurant id - failed get restaurant", async () => {
+      const res = await request(app).get(
+        "/restaurants/625a63636ab2f903486ecc75/items"
+      );
+
+      expect(res.status).toBe(404);
+      expect(res.body).toBeInstanceOf(Object);
+      expect(res.body).toHaveProperty("message", expect.any(String));
+      expect(res.body).toHaveProperty("message", res.body.message);
+    });
+  });
+});
+
+afterAll(async () => {
+  // const database = client.db("palmsBallroom");
+  // const ballroom = database.collection("ballrooms");
+  // await ballroom.deleteMany({})
+  await Restaurant.deleteMany();
+  await User.deleteMany();
+  await mongoose.disconnect();
+});
+
