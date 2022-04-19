@@ -3,34 +3,31 @@ const { comparePassword } = require("../helpers/bcrypt");
 const User = require("../models/user.model");
 
 class AuthController {
-	static async registerAdmin(req, res, next) {
-		try {
-			const { fullName, email, password, phoneNumber, profilePicture } =
-				req.body;
-			const user = await User.create({
-				fullName,
-				email,
-				password,
-				phoneNumber,
-				profilePicture,
-				role: "admin",
-			});
-			res.status(201).json({
-				status: "success",
-				data: {
-					user,
-				},
-			});
-		} catch (error) {
-			console.log(error);
-			next(error);
-		}
-	}
+	// static async registerAdmin(req, res, next) {
+	// 	try {
+	// 		const { fullName, email, password, phoneNumber, profilePicture } = req.body;
+	// 		const user = await User.create({
+	// 			fullName,
+	// 			email,
+	// 			password,
+	// 			phoneNumber,
+	// 			profilePicture,
+	// 			role: "admin",
+	// 		});
+	// 		res.status(201).json({
+	// 			status: "success",
+	// 			data: {
+	// 				user,
+	// 			},
+	// 		});
+	// 	} catch (error) {
+	// 		next(error);
+	// 	}
+	// }
 
 	static async login(req, res, next) {
 		try {
 			const { email, password } = req.body;
-			console.log(email, password, 77777777);
 			const user = await User.findOne({ email });
 			if (!user) {
 				throw {
@@ -38,16 +35,13 @@ class AuthController {
 					message: "Invalid email or password",
 				};
 			}
-			console.log(user, 888888888);
 			const isMatch = comparePassword(password, user.password);
-			console.log(isMatch, 9999999);
 			if (!isMatch) {
 				throw {
 					code: 400,
 					message: "Invalid email or password",
 				};
 			}
-			console.log(user);
 			const access_token = generateToken({
 				id: user._id,
 				email: user.email,
@@ -58,6 +52,7 @@ class AuthController {
 				access_token,
 			});
 		} catch (error) {
+			console.log(error);
 			next(error);
 		}
 	}
