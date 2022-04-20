@@ -138,9 +138,17 @@ class UserController {
 					data: {
 						external_id: order._id,
 						amount: order.totalPrice,
-						payer_email: order.customerEmail,
-						description: `Invoice ${order._id}`,
-					},
+						customer: {
+						  given_names: order.customerName,
+						  email: order.customerEmail,
+						  mobile_number: order.customerPhoneNumber
+							? order.customerPhoneNumber
+							: null,
+						},
+						description: `Invoice ${order._id} for Restaurant ${order.restaurantId} and table number ${order.tableNumber}`,
+						should_send_email: true,
+					  },
+			
 				});
 				let responseUrl = responseXendit.data.invoice_url;
 
