@@ -81,7 +81,6 @@ class RestaurantController {
 				message: "Restaurant availability updated successfully",
 			});
 		} catch (error) {
-			console.log(error);
 			next(error);
 		}
 	}
@@ -130,13 +129,6 @@ class RestaurantController {
 	static async getBookedByRestaurantId(req, res, next) {
 		try {
 			const { id } = req.params;
-			if (!id) {
-				throw {
-					code: 404,
-					name: "NotFound",
-					message: "not found",
-				};
-			}
 			const booked = await Order.find({
 				restaurantId: id,
 				status: "Booked",
@@ -159,13 +151,6 @@ class RestaurantController {
 	static async getItemByRestaurantId(req, res, next) {
 		try {
 			const { id } = req.params;
-			if (!id) {
-				throw {
-					code: 404,
-					name: "NotFound",
-					message: "not found",
-				};
-			}
 			const item = await Item.find({ restaurantId: id });
 			if (item.length == 0) {
 				throw {

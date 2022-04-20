@@ -257,7 +257,7 @@ describe("get restaurant --- failed", () => {
 	});
 
 	describe("- fail Get Restaurant orders By Restaurant Id -", () => {
-		it("get restaurant order by restaurant id - failed get restaurant", async () => {
+		it("get restaurant order by restaurant id - failed get order restaurant", async () => {
 			const payload = {
 				email: "domino@admin.com",
 				password: "domino",
@@ -274,6 +274,27 @@ describe("get restaurant --- failed", () => {
 				);
 
 			expect(res.status).toBe(401);
+			expect(res.body).toBeInstanceOf(Object);
+			expect(res.body).toHaveProperty("message", expect.any(String));
+			expect(res.body).toHaveProperty("message", res.body.message);
+		});
+		it("get restaurant order by restaurant id - failed get order restaurant", async () => {
+			const payload = {
+				email: "domino@admin.com",
+				password: "domino",
+			};
+			const loginResponse = await request(app)
+				.post("/admin/login")
+				.send(payload);
+			const access_token = loginResponse.body.access_token;
+			const res = await request(app)
+				.get("/restaurants//orders")
+				.set(
+					"access_token",
+					"yJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNTkxNDcyYzk4NTQ5N2JjYTAyOWY2ZiIsImVtYWlsIjoiZG9taW5vQGFkbWluLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY1MDM3OTI4NX0.phptXkZr03LDfkg1TFTdMtmXu4LOTqCZu2oVLfwHjBQ"
+				);
+
+			expect(res.status).toBe(400);
 			expect(res.body).toBeInstanceOf(Object);
 			expect(res.body).toHaveProperty("message", expect.any(String));
 			expect(res.body).toHaveProperty("message", res.body.message);
@@ -341,6 +362,27 @@ describe("get restaurant --- failed", () => {
 				);
 
 			expect(res.status).toBe(401);
+			expect(res.body).toBeInstanceOf(Object);
+			expect(res.body).toHaveProperty("message", expect.any(String));
+			expect(res.body).toHaveProperty("message", res.body.message);
+		});
+		it("get restaurant booked by restaurant id - failed get restaurantid", async () => {
+			const payload = {
+				email: "domino@admin.com",
+				password: "domino",
+			};
+			const loginResponse = await request(app)
+				.post("/admin/login")
+				.send(payload);
+			const access_token = loginResponse.body.access_token;
+			const res = await request(app)
+				.get("/restaurants//booked")
+				.set(
+					"access_token",
+					"yJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNTkxNDcyYzk4NTQ5N2JjYTAyOWY2ZiIsImVtYWlsIjoiZG9taW5vQGFkbWluLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY1MDM3OTI4NX0.phptXkZr03LDfkg1TFTdMtmXu4LOTqCZu2oVLfwHjBQ"
+				);
+
+			expect(res.status).toBe(400);
 			expect(res.body).toBeInstanceOf(Object);
 			expect(res.body).toHaveProperty("message", expect.any(String));
 			expect(res.body).toHaveProperty("message", res.body.message);
