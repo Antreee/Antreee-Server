@@ -44,7 +44,8 @@ describe("create order", () => {
 					],
 				});
 			expect(res.status).toBe(201);
-			expect(res.body).toEqual(expect.any(String));
+			expect(res.body).toHaveProperty("url");
+			expect(res.body).toHaveProperty("orderId");
 		});
 	});
 	describe("POST /customers/orders - success test with booking date and without order details", () => {
