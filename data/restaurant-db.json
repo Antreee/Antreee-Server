@@ -1,0 +1,87 @@
+[
+	{
+		"name": "Domino's Pizza",
+		"logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Domino%27s_pizza_logo.svg/1200px-Domino%27s_pizza_logo.svg.png",
+		"cuisine": ["Italian", "western", "Pizza"],
+		"address": "No 54 55 Komplek OCBC, Kel, Jl. Ring Road, Asam Kumbang, Kec. Medan Selayang, Kota Medan, Sumatera Utara 20133",
+		"location": {
+			"type": "Point",
+			"coordinates": [98.62642393507853, 3.565190444761281]
+		},
+		"contactNumber": "1500366",
+		"available": true,
+		"mainImagesUrl": [
+			"https://cdn4.singleinterface.com/files/outlet/outlet_facebook_images/outlet_cover_photo/63667/banner_5_1_jpg.jpg",
+			"http://node-img.qraved.com/image/data/Indonesia/Jakarta/Medan_Satria/Domino_s_Pizza/menu1.jpg?size=s"
+		],
+		"adminId": "62591472c985497bca029f6f"
+	},
+	{
+		"name": "Pepper Lunch",
+		"logoUrl": "https://pacificplace.b-cdn.net/directory_image/rr0nB/fnb-pepper-lunch.png",
+		"cuisine": ["Western", "Asian"],
+		"address": "HJ8G+R6H, Asam Kumbang, Medan Selayang, Medan City, North Sumatra 20122",
+		"location": {
+			"type": "Point",
+			"coordinates": [98.62546494915908, 3.567298860693729]
+		},
+		"contactNumber": "(061) 80501749",
+		"available": true,
+		"mainImagesUrl": [
+			"https://lh5.googleusercontent.com/p/AF1QipMwboKvWtPXSVmMNUBc7TXxHncwV9F0QJ4WITpH=w1080-k-no",
+			"https://hargamenu.net/wp-content/uploads/2017/11/Daftar-Harga-Menu-Pepper-Lunch-November-2017.png"
+		],
+		"adminId": "625918b7fe08008bfe451aae"
+	},
+	{
+		"name": "KFC",
+		"logoUrl": "https://blue.kumparan.com/image/upload/fl_progressive,fl_lossy,c_fill,q_auto:best,w_640/v1532412239/zvtc2usxcwdzideqo5up.png",
+		"cuisine": ["Western", "Chiken"],
+		"address": "Jalan Ring Road Setiabudi II, No. 99 S, Medan City, North Sumatra 20028",
+		"location": {
+			"type": "Point",
+			"coordinates": [98.62567589442588, 3.5652013174103754]
+		},
+		"contactNumber": "08117157361",
+		"available": true,
+		"mainImagesUrl": [
+			"https://i.ytimg.com/vi/THwtCeY15xg/hqdefault.jpg",
+			"https://ik.imagekit.io/tvlk/cul-asset/guys1L+Yyer9kzI3sp-pb0CG1j2bhflZGFUZOoIf1YOBAm37kEUOKR41ieUZm7ZJ/cul-assets-252301483284-b172d73b6c43cddb/culinary/asset/REST_188-720x720-FIT_AND_TRIM-850e30d4317d84859ee10b15258635f6.jpeg?tr=q-40,w-300,h-300&amp;_src=imagekit"
+		],
+		"adminId": "62591c45e1033952ea7c9e30"
+	},
+	{
+		"name": "J.CO Donuts & Coffee Ringroad City Walk",
+		"logoUrl": "https://res.cloudinary.com/df2knrwm3/image/upload/v1563950571/qq955zhxx9jocfya8b6n.png",
+		"cuisine": ["Coffee", "Donuts", "Cafe"],
+		"address": "Smarco Superstore Supermarket, Jl. Ring Road, Sunggal, Kec. Medan Sunggal, Kota Medan, Sumatera Utara 20122",
+		"location": {
+			"type": "Point",
+			"coordinates": [98.62582507168293, 3.576000438935519]
+		},
+		"contactNumber": "(061) 80026576",
+		"available": true,
+		"mainImagesUrl": [
+			"https://cloudfront.gotomalls.com/uploads/retailers/pictures/L51y3tvWvzCNjyRX-jco-donut-coffee-1553567164_1.jpg",
+			"https://promoproduk.id/wp-content/uploads/2020/04/1788-00001.jpg"
+		],
+		"adminId": "62591e6eeecce3d7b04df855"
+	},
+	{
+		"name": "Asoka Corner",
+		"logoUrl": "https://pbs.twimg.com/profile_images/1049858204811780096/KzifXLNA_400x400.jpg",
+		"cuisine": ["Western", "Asian", "Japanese", "Indonesian"],
+		"address": "HJ7G+589, Asam Kumbang, Medan Selayang, Medan City, North Sumatra 20133",
+		"location": {
+			"type": "Point",
+			"coordinates": [98.62585656718541, 3.563053022307297]
+		},
+		"contactNumber": "(061)8227822",
+		"available": true,
+		"mainImagesUrl": [
+			"https://t-2.tstatic.net/medan/foto/bank/images/asoka-corner_20170512_132841.jpg",
+			"https://pbs.twimg.com/profile_images/1049858204811780096/KzifXLNA_400x400.jpg"
+		],
+		"adminId": "625921b2572f7356eb913bc0"
+	}
+]

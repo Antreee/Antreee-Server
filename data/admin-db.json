@@ -1,0 +1,47 @@
+[
+	{
+		"email": "domino@admin.com",
+		"password": "domino",
+		"fullName": "asep surasep",
+		"phoneNumber": "123456789",
+		"profilePicture": "https://media-exp1.licdn.com/dms/image/C5103AQEufX4pz82prg/profile-displayphoto-shrink_200_200/0/1545135546054?e=1654732800&v=beta&t=3gTVvR8cwaghNeUbQJTfm9uPPKj3c2xZNlXPeFoyi7g",
+		"role": "admin",
+		"_id": "62591472c985497bca029f6f"
+	},
+	{
+		"fullName": "ujang",
+		"email": "paper.lunch@admin.com",
+		"password": "paperlunch",
+		"phoneNumber": "123456789",
+		"profilePicture": "http://1.bp.blogspot.com/--QceFSVpb84/VGdjiyVhZyI/AAAAAAAABt0/1n4k853S7BY/s1600/pr6.jpg",
+		"role": "admin",
+		"_id": "625918b7fe08008bfe451aae"
+	},
+	{
+		"fullName": "colonel sanders",
+		"email": "kfc.ringroad@admin.com",
+		"password": "kfcringroad",
+		"phoneNumber": "123456789",
+		"profilePicture": "https://media-exp1.licdn.com/dms/image/C5603AQFlsbw0D6wawQ/profile-displayphoto-shrink_200_200/0/1587954601737?e=2147483647&v=beta&t=aOWuzfmMJycYmb0G2iF1i-DFBZEfbjMvoe0eK8wC6BY",
+		"role": "admin",
+		"_id": "62591c45e1033952ea7c9e30"
+	},
+	{
+		"email": "jco.smarco@admin.com",
+		"password": "jcosmarco",
+		"fullName": "jacuel miguel olivera",
+		"phoneNumber": "123456789",
+		"profilePicture": "https://cdn-2.tstatic.net/lampung/foto/bank/images/manager-operasional-jco-donuts-coffee-lampung-martin-parinding_20171106_180925.jpg",
+		"role": "admin",
+		"_id": "62591e6eeecce3d7b04df855"
+	},
+	{
+		"email": "asoka.corner@admin.com",
+		"password": "asokacorner",
+		"fullName": "hanma baki",
+		"phoneNumber": "123456789",
+		"profilePicture": "https://t-2.tstatic.net/medan/foto/bank/images2/peninjauan-ke-gedung-eks-Perisai-Plaza-Medan.jpg",
+		"role": "admin",
+		"_id": "625921b2572f7356eb913bc0"
+	}
+]

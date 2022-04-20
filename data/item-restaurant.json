@@ -1,0 +1,450 @@
+[
+	{
+		"name": "NewYorker Alfredo Beef Mushroom Truffle",
+		"price": 80910,
+		"description": "Roti pizza dengan ketebalan sedang, Lembut di bagian dalam namun renyah di bagian luar, Truffle Alfredo Sauce, Keju Mozzarella, Beef Burger, Onion, Jamur Champignon, Keju Parmesan, Parsley",
+		"imageUrl": "https://dom-repo-olo-prod.oss-ap-southeast-5.aliyuncs.com/catalog/product/cache/2/image/9df78eab33525d08d6e5fb8d27136e95/n/e/newyorkeralfredobeefmushroomtrufflebig.png",
+		"restaurantId": "625a63636ab2f903486ecc74",
+		"categoryItem": "food"
+	},
+	{
+		"name": "Ultimate Cheese Melt",
+		"price": 80910,
+		"description": "Roti pizza dengan ketebalan sedang, Lembut di bagian dalam namun renyah di bagian luar, Liquid Cheese Sauce,Keju Mozzarella, Cheddar Cheese Sauce, Keju Ricotta, Mozzarella String, Keju Parmesan, Parsley",
+		"imageUrl": "https://dom-repo-olo-prod.oss-ap-southeast-5.aliyuncs.com/catalog/product/cache/2/image/9df78eab33525d08d6e5fb8d27136e95/u/l/ultimatecheesemeltnew.png",
+		"restaurantId": "625a63636ab2f903486ecc74",
+		"categoryItem": "food"
+	},
+	{
+		"name": "Grilled Beef Supreme",
+		"price": 80910,
+		"description": "Roti pizza dengan ketebalan sedang, Lembut di bagian dalam namun renyah di bagian luar, BBQ Sauce, Cheese Sauce, Onion, Beef Burger, Jalapeno, Mozzarella Cheese",
+		"imageUrl": "https://dom-repo-olo-prod.oss-ap-southeast-5.aliyuncs.com/catalog/product/cache/2/image/9df78eab33525d08d6e5fb8d27136e95/g/r/grill-beef-supreme-550x550px.png",
+		"restaurantId": "625a63636ab2f903486ecc74",
+		"categoryItem": "food"
+	},
+	{
+		"name": "NewYorker Alfredo Chicken Mushroom Truffle",
+		"price": 80910,
+		"description": "Roti pizza dengan ketebalan sedang, Lembut di bagian dalam namun renyah di bagian luar, Truffle Alfredo Sauce, Keju Mozzarella, Chili Chicken, Onion, Jamur Champignon, Keju Parmesan, Parsley",
+		"imageUrl": "https://dom-repo-olo-prod.oss-ap-southeast-5.aliyuncs.com/catalog/product/cache/2/image/9df78eab33525d08d6e5fb8d27136e95/n/e/newyorkeralfredochickenmushroomtrufflebig_1.png",
+		"restaurantId": "625a63636ab2f903486ecc74",
+		"categoryItem": "food"
+	},
+	{
+		"name": "American Frankie Sausage",
+		"price": 80910,
+		"description": "Roti pizza dengan ketebalan sedang, Lembut di bagian dalam namun renyah di bagian luar, Rustic Sauce, Mustard, Mozzarella Cheese, Meaty Frankfurter Beef Sausage, Beef Rasher, Beef Crumble, Onion, Green Pepper, Tomato, Mayonnaise, Parsley",
+		"imageUrl": "https://dom-repo-olo-prod.oss-ap-southeast-5.aliyuncs.com/catalog/product/cache/2/image/9df78eab33525d08d6e5fb8d27136e95/a/m/americanfrankiesausagepizza.png",
+		"restaurantId": "625a63636ab2f903486ecc74",
+		"categoryItem": "food"
+	},
+	{
+		"name": "Taro Milk",
+		"price": 15455,
+		"description": "milk with taro flavor",
+		"imageUrl": "https://dom-repo-olo-prod.oss-ap-southeast-5.aliyuncs.com/catalog/product/cache/2/image/9df78eab33525d08d6e5fb8d27136e95/t/a/taro-milk_1.png",
+		"restaurantId": "625a63636ab2f903486ecc74",
+		"categoryItem": "drink"
+	},
+	{
+		"name": "Peach Tea",
+		"price": 15455,
+		"description": "Tea with peach flavor",
+		"imageUrl": "https://dom-repo-olo-prod.oss-ap-southeast-5.aliyuncs.com/catalog/product/cache/2/image/9df78eab33525d08d6e5fb8d27136e95/p/e/peach-tea.png",
+		"categoryItem": "drink",
+		"restaurantId": "625a63636ab2f903486ecc74"
+	},
+	{
+		"name": "Lychee Tea",
+		"price": 15455,
+		"description": "Tea with lychee flavor",
+		"imageUrl": "https://dom-repo-olo-prod.oss-ap-southeast-5.aliyuncs.com/catalog/product/cache/2/image/9df78eab33525d08d6e5fb8d27136e95/l/y/lychee-tea.png",
+		"categoryItem": "drink",
+		"restaurantId": "625a63636ab2f903486ecc74"
+	},
+	{
+		"name": "1 liter Fanta",
+		"price": 16827,
+		"description": "1 liter of fanta softdrink",
+		"imageUrl": "https://dom-repo-olo-prod.oss-ap-southeast-5.aliyuncs.com/catalog/product/cache/2/small_image/310x/9df78eab33525d08d6e5fb8d27136e95/f/a/fanta-1lt-2_1.png",
+		"categoryItem": "drink",
+		"restaurantId": "625a63636ab2f903486ecc74"
+	},
+	{
+		"name": "Chocolate Lava",
+		"price": 27273,
+		"description": "cake with chocolate lava",
+		"imageUrl": "https://dom-repo-olo-prod.oss-ap-southeast-5.aliyuncs.com/catalog/product/cache/2/small_image/187x/9df78eab33525d08d6e5fb8d27136e95/c/h/chocolate-lava-550x550px_1.png",
+		"restaurantId": "625a63636ab2f903486ecc74",
+		"categoryItem": "snack"
+	},
+	{
+		"name": "Potato Wedge",
+		"price": 19273,
+		"description": "Large Chunk of Potato",
+		"imageUrl": "https://dom-repo-olo-prod.oss-ap-southeast-5.aliyuncs.com/catalog/product/cache/2/image/9df78eab33525d08d6e5fb8d27136e95/p/o/potato-wedges-550x550px.png",
+		"restaurantId": "625a63636ab2f903486ecc74",
+		"categoryItem": "snack"
+	},
+	{
+		"name": "GARLIC CHEESY ROLLS (2 PCS)",
+		"price": 21000,
+		"description": "Roti bawang lembut berisi 2 potong",
+		"imageUrl": "https://dom-repo-olo-prod.oss-ap-southeast-5.aliyuncs.com/catalog/product/cache/2/small_image/187x/9df78eab33525d08d6e5fb8d27136e95/g/a/garlic-cheesy-rolls-550x550px.png",
+		"restaurantId": "625a63636ab2f903486ecc74",
+		"categoryItem": "snack"
+	},
+	{
+		"name": "BREAD STICKS (8 PCS)",
+		"price": 26456,
+		"description": "Roti Stick 8 potong",
+		"imageUrl": "https://dom-repo-olo-prod.oss-ap-southeast-5.aliyuncs.com/catalog/product/cache/2/small_image/187x/9df78eab33525d08d6e5fb8d27136e95/b/r/bread-stick.png",
+		"restaurantId": "625a63636ab2f903486ecc74",
+		"categoryItem": "snack"
+	},
+	{
+		"name": "Hamburg Steak with Egg",
+		"price": 96364,
+		"description": "Our scrumptious Aussie hamburg steak",
+		"imageUrl": "http://pepperlunch.id/wp-content/uploads/2014/10/01_hamburg_steak_with_egg.jpg",
+		"restaurantId": "625a63636ab2f903486ecc75",
+		"categoryItem": "food"
+	},
+	{
+		"name": "Salmon & Chicken Combo Pepper Rice",
+		"price": 96364,
+		"description": "Two of our favorites mixed in one plate",
+		"imageUrl": "http://pepperlunch.id/wp-content/uploads/2014/10/01_salmon_and_chicken_combo_pepper_rice.jpg",
+		"restaurantId": "625a63636ab2f903486ecc75",
+		"categoryItem": "food"
+	},
+	{
+		"name": "Curry Beef Pepper Rice with Cheese",
+		"price": 96364,
+		"description": "Our Classic Beef Pepper Rice jazzed up with an aromatic blend of curry and",
+		"imageUrl": "http://pepperlunch.id/wp-content/uploads/2014/09/00_04_curry_beef_pepper_rice_with_cheese.jpg",
+		"restaurantId": "625a63636ab2f903486ecc75",
+		"categoryItem": "food"
+	},
+	{
+		"name": "Salmon & Mushroom Cream Sauce",
+		"price": 96364,
+		"description": "Endless temptation comes with the cream-filled delight",
+		"imageUrl": "http://pepperlunch.id/wp-content/uploads/2014/10/01_salmon_and_mushroom_cream_and_sauce.jpg",
+		"restaurantId": "625a63636ab2f903486ecc75",
+		"categoryItem": "food"
+	},
+	{
+		"name": "Sizzling Curry Rice with Hamburg Steak and Egg",
+		"price": 96364,
+		"description": "Combination of our delicious curry rice, delectable Hamburg & egg",
+		"imageUrl": "http://pepperlunch.id/wp-content/uploads/2014/10/01_sizzling_curry_rice_with_hamburg_steak_and_egg.jpg",
+		"restaurantId": "625a63636ab2f903486ecc75",
+		"categoryItem": "food"
+	},
+	{
+		"name": "Nestea Lemon Tea",
+		"price": 13636,
+		"description": "Our scrumptious Aussie hamburg steak",
+		"imageUrl": "https://d1sag4ddilekf6.azureedge.net/compressed/items/IDITE20211223170330038637/photo/4767371a76a54280af9d8fb99bcc6d8a_1640279010354353699.jpg",
+		"restaurantId": "625a63636ab2f903486ecc75",
+		"categoryItem": "drink"
+	},
+	{
+		"name": "Strawberry Ice Cream",
+		"price": 10909,
+		"description": "Ice Cream with Strawberry topping",
+		"imageUrl": "http://pepperlunch.id/wp-content/uploads/2014/10/01_strawberry_ice_cream_small.jpg",
+		"restaurantId": "625a63636ab2f903486ecc75",
+		"categoryItem": "snack"
+	},
+	{
+		"name": "Chocolate Ice Cream",
+		"price": 10909,
+		"description": "Ice Cream with Chocolate topping",
+		"imageUrl": "http://pepperlunch.id/wp-content/uploads/2014/10/01_mix_berry_ice_cream_small.jpg",
+		"restaurantId": "625a63636ab2f903486ecc75",
+		"categoryItem": "snack"
+	},
+	{
+		"name": "Red Velvet Mousse",
+		"price": 10909,
+		"description": "Mousse with red velvet flavor",
+		"imageUrl": "http://pepperlunch.id/wp-content/uploads/2014/10/01_red_velvet.jpg",
+		"restaurantId": "625a63636ab2f903486ecc75",
+		"categoryItem": "snack"
+	},
+	{
+		"name": "Oreo Cheese",
+		"price": 10909,
+		"description": "Mousse with Oreo Cheese topping",
+		"imageUrl": "http://pepperlunch.id/wp-content/uploads/2014/10/01_oreo_cheese.jpg",
+		"restaurantId": "625a63636ab2f903486ecc75",
+		"categoryItem": "snack"
+	},
+	{
+		"name": "9 PCS BUCKET",
+		"price": 144545,
+		"description": "9 pcs Chicken with secret recipe",
+		"imageUrl": "https://files.kfcku.com/uploads/media/food-menu/spesial/kfc-web_9pcbucket-_l.png",
+		"restaurantId": "625a63636ab2f903486ecc76",
+		"categoryItem": "food"
+	},
+	{
+		"name": "WINGS BUCKET",
+		"price": 144545,
+		"description": "7 pcs Chicken Wings with secret recipe",
+		"imageUrl": "https://files.kfcku.com/uploads/media/food-menu/spesial/kfc-web_wingsbucket_l.png",
+		"restaurantId": "625a63636ab2f903486ecc76",
+		"categoryItem": "food"
+	},
+	{
+		"name": "SNACK BUCKET 2 BBQ",
+		"price": 85000,
+		"description": "7 pcs Chicken Wings with secret recipe",
+		"imageUrl": "https://files.kfcku.com/uploads/media/dummy/food/thumbnail/kfc-web_sbspicysour-2_t.png",
+		"restaurantId": "625a63636ab2f903486ecc76",
+		"categoryItem": "food"
+	},
+	{
+		"name": "SUPER FAMILY HCC",
+		"price": 120000,
+		"description": "3 pcs rice, 5 pcs Chicken, 3 soft drink",
+		"imageUrl": "https://files.kfcku.com/uploads/media/dummy/food/thumbnail/kfc-web_sbspicysour-2_t.png",
+		"restaurantId": "625a63636ab2f903486ecc76",
+		"categoryItem": "food"
+	},
+	{
+		"name": "MOCHA FLOAT",
+		"price": 10000,
+		"description": "Mocha Float",
+		"imageUrl": "https://files.kfcku.com/uploads/media/food-menu/drinks/large/kfc-web_mocha-float_l_1.png",
+		"restaurantId": "625a63636ab2f903486ecc76",
+		"categoryItem": "drink"
+	},
+	{
+		"name": "MANGO FLOAT",
+		"price": 10000,
+		"description": "Mango Float",
+		"imageUrl": "https://files.kfcku.com/uploads/media/food-menu/drinks/thumbnail/kfc-web_mangofloat_t.png",
+		"restaurantId": "625a63636ab2f903486ecc76",
+		"categoryItem": "drink"
+	},
+	{
+		"name": "ICHI OCHA",
+		"price": 14000,
+		"description": "ichi ocha 150 ml",
+		"imageUrl": "https://files.kfcku.com/uploads/media/food-menu/drinks/thumbnail/kfc-web_ichi-ocha_t_1.png",
+		"restaurantId": "625a63636ab2f903486ecc76",
+		"categoryItem": "drink"
+	},
+	{
+		"name": "HAZELNUT COFFEE",
+		"price": 14000,
+		"description": "Coffee with hazelnut flavor",
+		"imageUrl": "https://files.kfcku.com/uploads/media/food-menu/drinks/thumbnail/kfc-web_hazelnut-coffee_t_1.png",
+		"restaurantId": "625a63636ab2f903486ecc76",
+		"categoryItem": "drink"
+	},
+	{
+		"name": "LOVLYCHEE FLOAT",
+		"price": 14000,
+		"description": "LOVLYCHEE FLOAT",
+		"imageUrl": "https://files.kfcku.com/uploads/media/dummy/food/kfc-web_lovlychee-float_t.png",
+		"restaurantId": "625a63636ab2f903486ecc76",
+		"categoryItem": "drink"
+	},
+	{
+		"name": "CHOCONUT SUNDAE",
+		"price": 10000,
+		"description": "Ice cream with chocolate and nut flavor sauce",
+		"imageUrl": "https://files.kfcku.com/uploads/media/food-menu/drinks/large/kfc-web_mocha-float_l_1.png",
+		"restaurantId": "625a63636ab2f903486ecc76",
+		"categoryItem": "snack"
+	},
+	{
+		"name": "SOFT ICE CREAM",
+		"price": 10000,
+		"description": "Vanila flavor soft ice cream with cone",
+		"imageUrl": "https://files.kfcku.com/uploads/media/dummy/food/thumbnail/kfc-web_softicecream_t.png",
+		"restaurantId": "625a63636ab2f903486ecc76",
+		"categoryItem": "snack"
+	},
+	{
+		"name": "LARGE FRENCE FRIES",
+		"price": 20000,
+		"description": "large french fries",
+		"imageUrl": "https://files.kfcku.com/uploads/media/dummy/food/thumbnail/kfc-web_frenchfrieslar_t.png",
+		"restaurantId": "625a63636ab2f903486ecc76",
+		"categoryItem": "snack"
+	},
+	{
+		"name": "FUN FRIES BBQ",
+		"price": 22000,
+		"description": "Large french fries with BBQ sauce",
+		"imageUrl": "https://files.kfcku.com/uploads/media/dummy/food/thumbnail/kfc-web_fun-fries-bbq_t.png",
+		"restaurantId": "625a63636ab2f903486ecc76",
+		"categoryItem": "snack"
+	},
+	{
+		"name": "CORN CREAM SOUP",
+		"price": 15000,
+		"description": "cream soup with corn ",
+		"imageUrl": "https://files.kfcku.com/uploads/media/dummy/food/kfc-web_creamsoup_l_1.png",
+		"restaurantId": "625a63636ab2f903486ecc76",
+		"categoryItem": "snack"
+	},
+	{
+		"name": "Alcapone",
+		"price": 10000,
+		"description": "Donut dipped in white chocolate and topped with sliced toasted almonds.",
+		"imageUrl": "http://api.vold.dev.fleava.com/pictures/5b39cd517169294aba251f43/donuts/4be290c0-6623-4407-afd9-773f88a0bdd3.jpg",
+		"restaurantId": "625a63636ab2f903486ecc77",
+		"categoryItem": "food"
+	},
+	{
+		"name": "Avocado Dicaprio",
+		"price": 10000,
+		"description": "Donut filled with avocado cream, dipped in avocado chocolate, and garnished with dark chocolate flakes.",
+		"imageUrl": "http://api.vold.dev.fleava.com/pictures/5b39cd517169294aba251f43/donuts/bd66767e-3fdf-4c92-b822-50b524e094ff.jpg",
+		"restaurantId": "625a63636ab2f903486ecc77",
+		"categoryItem": "food"
+	},
+	{
+		"name": "Berry Spears",
+		"price": 10000,
+		"description": "Donut filled with whipped cream cheese, dipped in strawberry jam, and garnished with white chocolate flakes.",
+		"imageUrl": "http://api.vold.dev.fleava.com/pictures/5b39cd517169294aba251f43/donuts/fcde6082-2a50-447c-bd1f-c022e7a74a67.jpg",
+		"restaurantId": "625a63636ab2f903486ecc77",
+		"categoryItem": "food"
+	},
+	{
+		"name": "Black Jack",
+		"price": 10000,
+		"description": "Donut fully encased in dark chocolate.",
+		"imageUrl": "http://api.vold.dev.fleava.com/pictures/5b39cd517169294aba251f43/donuts/8777fff0-1018-4495-b025-33bd4c2fefcd.jpg",
+		"restaurantId": "625a63636ab2f903486ecc77",
+		"categoryItem": "food"
+	},
+	{
+		"name": "Cheese Cakelicious",
+		"price": 10000,
+		"description": "Donut filled with whipped cream cheese, dipped in white chocolate, topped with cookie crumbs, and garnished with white chocolate.",
+		"imageUrl": "http://api.vold.dev.fleava.com/pictures/5b39cd517169294aba251f43/donuts/aebf42f6-9e66-4e5c-aa4f-cf7f2f2a3173.jpg",
+		"categoryItem": "food",
+		"restaurantId": "625a63636ab2f903486ecc77"
+	},
+	{
+		"name": "Glazzy",
+		"price": 10000,
+		"description": "Donut dipped in light honey glaze.",
+		"imageUrl": "http://api.vold.dev.fleava.com/pictures/5b39cd517169294aba251f43/donuts/097eddf8-e527-43fe-81c1-8db9c7718f0e.jpg",
+		"categoryItem": "food",
+		"restaurantId": "625a63636ab2f903486ecc77"
+	},
+	{
+		"name": "Tira Miss U",
+		"price": 10000,
+		"description": "Donut filled with tiramisu cream, dipped in tiramisu chocolate, and sprinkled with chocolate powder.",
+		"imageUrl": "http://api.vold.dev.fleava.com/pictures/5b39cd517169294aba251f43/donuts/160564ea-8903-4324-bbcc-213361beb5f7.jpg",
+		"categoryItem": "food",
+		"restaurantId": "625a63636ab2f903486ecc77"
+	},
+	{
+		"name": "Jpods",
+		"price": 60000,
+		"description": "Bite size donuts in 12 popular flavors: Alcapone, Coco Loco, Why Nut, Heaven Berry, & others with vanilla whipped cream or chocolate whipped cream filling.",
+		"imageUrl": "http://api.vold.dev.fleava.com/pictures/5b39cd517169294aba251f43/product_category/948d3291-6133-45f8-92f2-954da309654b.jpg",
+		"categoryItem": "food",
+		"restaurantId": "625a63636ab2f903486ecc77"
+	},
+	{
+		"name": "Avocado Frappe",
+		"price": 55000,
+		"description": "Espresso shot blended with ice nuggets, fresh milk, avocado powder, topped with mocha cream, and garnished with chocolate flakes.",
+		"imageUrl": "http://api.vold.dev.fleava.com/pictures/5b39cd517169294aba251f43/jcoffee/dd7bce00-6980-4c8e-b1ba-afba268860b1.jpg",
+		"restaurantId": "625a63636ab2f903486ecc77",
+		"categoryItem": "drink"
+	},
+	{
+		"name": "Caramel Frappe",
+		"price": 55000,
+		"description": "Espresso shot blended with ice nuggets, fresh milk, caramel syrup, topped with mocha cream, and garnished with caramel sauce.",
+		"imageUrl": "http://api.vold.dev.fleava.com/pictures/5b39cd517169294aba251f43/jcoffee/ed43f9e4-daaf-4cec-844e-03020463e4f4.jpg",
+		"restaurantId": "625a63636ab2f903486ecc77",
+		"categoryItem": "drink"
+	},
+	{
+		"name": "Espresso",
+		"price": 55000,
+		"description": "Espresso shot blended with ice nuggets, fresh milk, chocolate, topped with mocha cream, and garnished with chocolate powder.",
+		"imageUrl": "http://api.vold.dev.fleava.com/pictures/5b39cd517169294aba251f43/jcoffee/98490d6f-0fdc-4932-9681-4f19dcdac242.jpg",
+		"restaurantId": "625a63636ab2f903486ecc77",
+		"categoryItem": "drink"
+	},
+	{
+		"name": "Mocha Espresso Frappe",
+		"price": 55000,
+		"description": "Strong & concentrated coffee shot.",
+		"imageUrl": "http://api.vold.dev.fleava.com/pictures/5b39cd517169294aba251f43/jcoffee/e77de158-7b3c-4b98-8be8-da2e9319297e.jpg",
+		"restaurantId": "625a63636ab2f903486ecc77",
+		"categoryItem": "drink"
+	},
+	{
+		"name": "Jcool Sharing",
+		"price": 43000,
+		"description": "Fat-free frozen yogurt in original or blueberry flavor with toppings of your choice.",
+		"imageUrl": "http://api.vold.dev.fleava.com/pictures/5b39cd517169294aba251f43/jcool/d77b4784-62ea-4dac-8e5c-63a85981c6ef.jpg",
+		"restaurantId": "625a63636ab2f903486ecc77",
+		"categoryItem": "snack"
+	},
+	{
+		"name": "Jcool GO TO",
+		"price": 65000,
+		"description": "Fat-free frozen yogurt in original or blueberry flavor with toppings of your choice, in convenient to-go packaging.",
+		"imageUrl": "http://api.vold.dev.fleava.com/pictures/5b39cd517169294aba251f43/jcool/2eaa82ca-73c9-400a-9e2d-12d820216922.jpg",
+		"restaurantId": "625a63636ab2f903486ecc77",
+		"categoryItem": "snack"
+	},
+	{
+		"name": "Jcool Single",
+		"price": 20000,
+		"description": "Fat-free frozen yogurt in original or blueberry flavor with toppings of your choice.",
+		"imageUrl": "http://api.vold.dev.fleava.com/pictures/5b39cd517169294aba251f43/jcool/1ce0b922-10a1-412e-b826-94bdb1fa8e1a.jpg",
+		"restaurantId": "625a63636ab2f903486ecc77",
+		"categoryItem": "snack"
+	},
+	{
+		"name": "Jcool Couple",
+		"price": 35000,
+		"description": "Fat-free frozen yogurt in original or blueberry flavor with toppings of your choice.",
+		"imageUrl": "http://api.vold.dev.fleava.com/pictures/5b39cd517169294aba251f43/jcool/2eaa82ca-73c9-400a-9e2d-12d820216922.jpg",
+		"restaurantId": "625a63636ab2f903486ecc77",
+		"categoryItem": "snack"
+	},
+	{
+		"name": "Ayam Panggang 1 ekor",
+		"price": 95000,
+		"description": "grilled chicken with secret sauce .",
+		"imageUrl": "https://cf.shopee.co.id/file/7b92c694ca9a45381fbaf7c6e8c5293f",
+		"restaurantId": "625a63636ab2f903486ecc78",
+		"categoryItem": "food"
+	},
+	{
+		"name": "Ice Tea",
+		"price": 7500,
+		"description": "tea that give fresh feeling to your body .",
+		"imageUrl": "https://cdn1-production-images-kly.akamaized.net/TlSeigXYkHEimYvjOGKjks_7Cuc=/1x68:1000x631/1200x675/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/3559928/original/012034400_1630641222-shutterstock_658470967.jpg",
+		"restaurantId": "625a63636ab2f903486ecc78",
+		"categoryItem": "drink"
+	},
+	{
+		"name": "chicken dimsum",
+		"price": 20000,
+		"description": "dimsum with chicken flavor.",
+		"imageUrl": "https://asset.kompas.com/crops/DEDxeclyBPPZ2miRZhxGFJxhHU0=/0x175:800x708/750x500/data/photo/2021/01/18/60053789dc100.jpg",
+		"restaurantId": "625a63636ab2f903486ecc78",
+		"categoryItem": "snack"
+	}
+]
