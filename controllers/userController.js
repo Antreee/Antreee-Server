@@ -144,12 +144,14 @@ class UserController {
 				});
 				let responseUrl = responseXendit.data.invoice_url;
 
-				res.status(201).json(responseUrl);
+				res.status(201).json({
+					url: responseUrl,
+					orderId: order._id,
+				});
 				return;
 			}
 			res.status(200).json("Booking Success");
 		} catch (error) {
-			console.log(error);
 			next(error);
 		}
 	}
