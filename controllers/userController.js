@@ -133,8 +133,7 @@ class UserController {
           headers: {
             "Content-Type": "application/json",
             Accept: "application/json",
-            Authorization:
-              "Basic eG5kX2RldmVsb3BtZW50X1Byb2g5VHZ3SVJmTll2Und0c3FEMVU0WmlyY0dmcTRTZ2RrTEpNYkg5RnV4TFdwdlVoVGNVWGQ3Z09KMWlWCg",
+            Authorization: process.env.XENDIT_KEY,
           },
           data: {
             external_id: order._id,
